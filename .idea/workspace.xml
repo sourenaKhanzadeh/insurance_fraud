@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="139ddabf-1a22-472b-a03d-bfde087db4b2" name="Default" comment="" />
+    <list default="true" id="139ddabf-1a22-472b-a03d-bfde087db4b2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,11 +14,85 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/final_project$main.coverage" NAME="main Coverage Results" MODIFIED="1604005249774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/final_project$main.coverage" NAME="main Coverage Results" MODIFIED="1604018376207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="189" column="58" lean-forward="false" selection-start-line="189" selection-start-column="58" selection-end-line="189" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="x_train_corr.csv" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/x_train_corr.csv">
+          <provider selected="true" editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
+              <column index="0" width="100" />
+              <column index="1" width="100" />
+              <column index="2" width="100" />
+              <column index="3" width="100" />
+              <column index="4" width="100" />
+              <column index="5" width="100" />
+              <column index="6" width="100" />
+              <column index="7" width="100" />
+              <column index="8" width="100" />
+              <column index="9" width="100" />
+              <column index="10" width="100" />
+              <column index="11" width="100" />
+              <column index="12" width="100" />
+              <column index="13" width="100" />
+              <column index="14" width="100" />
+              <column index="15" width="100" />
+              <column index="16" width="100" />
+              <column index="17" width="100" />
+              <column index="18" width="100" />
+              <column index="19" width="100" />
+              <column index="20" width="100" />
+              <column index="21" width="100" />
+              <column index="22" width="100" />
+              <column index="23" width="100" />
+              <column index="24" width="100" />
+              <column index="25" width="100" />
+              <column index="26" width="100" />
+              <column index="27" width="100" />
+              <column index="28" width="100" />
+              <column index="29" width="100" />
+              <column index="30" width="100" />
+              <column index="31" width="100" />
+              <column index="32" width="100" />
+              <column index="33" width="100" />
+              <column index="34" width="100" />
+              <column index="35" width="100" />
+            </state>
+          </provider>
+          <provider editor-type-id="csv-text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logistic_regression.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logistic_regression.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-707">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
+              <folding>
+                <element signature="e#49#67#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="insurance_claims.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/insurance_claims.csv">
           <provider selected="true" editor-type-id="csv-table-editor">
@@ -61,43 +139,9 @@
             </state>
           </provider>
           <provider editor-type-id="csv-text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="122" lean-forward="false" selection-start-line="1" selection-start-column="122" selection-end-line="1" selection-end-column="122" />
+            <state relative-caret-position="0">
+              <caret line="0" column="508" lean-forward="false" selection-start-line="0" selection-start-column="508" selection-end-line="0" selection-end-column="508" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_column_transformer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/compose/_column_transformer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2760">
-              <caret line="176" column="8" lean-forward="false" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logistic_regression.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
-              <folding>
-                <element signature="e#49#67#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -115,6 +159,9 @@
     <findStrings>
       <find>?</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -135,6 +182,7 @@
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -169,7 +217,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="nodejs_interpreter_path" value="d:/Program Files/nodejs/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../www/Dental" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -392,15 +440,16 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25799572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25799572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -409,7 +458,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -665,16 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <element signature="e#49#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/pandas/core/tools/datetimes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
@@ -691,18 +729,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/preprocessing/_label.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="963">
-          <caret line="242" column="8" lean-forward="false" selection-start-line="242" selection-start-column="8" selection-end-line="242" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/compose/_column_transformer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2760">
           <caret line="176" column="8" lean-forward="false" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/preprocessing/_label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="174" column="6" lean-forward="false" selection-start-line="174" selection-start-column="6" selection-end-line="174" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -752,8 +790,8 @@
         </state>
       </provider>
       <provider editor-type-id="csv-text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="122" lean-forward="false" selection-start-line="1" selection-start-column="122" selection-end-line="1" selection-end-column="122" />
+        <state relative-caret-position="0">
+          <caret line="0" column="508" lean-forward="false" selection-start-line="0" selection-start-column="508" selection-end-line="0" selection-end-column="508" />
           <folding />
         </state>
       </provider>
@@ -764,13 +802,120 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/x_train.csv">
+      <provider selected="true" editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
+          <column index="0" width="100" />
+          <column index="1" width="100" />
+          <column index="2" width="100" />
+          <column index="3" width="100" />
+          <column index="4" width="100" />
+          <column index="5" width="100" />
+          <column index="6" width="100" />
+          <column index="7" width="100" />
+          <column index="8" width="100" />
+          <column index="9" width="100" />
+          <column index="10" width="100" />
+          <column index="11" width="100" />
+          <column index="12" width="100" />
+          <column index="13" width="100" />
+          <column index="14" width="100" />
+          <column index="15" width="100" />
+          <column index="16" width="100" />
+          <column index="17" width="100" />
+          <column index="18" width="100" />
+          <column index="19" width="100" />
+          <column index="20" width="100" />
+          <column index="21" width="100" />
+          <column index="22" width="100" />
+          <column index="23" width="100" />
+          <column index="24" width="100" />
+          <column index="25" width="100" />
+          <column index="26" width="100" />
+          <column index="27" width="100" />
+          <column index="28" width="100" />
+          <column index="29" width="100" />
+          <column index="30" width="100" />
+          <column index="31" width="100" />
+          <column index="32" width="100" />
+          <column index="33" width="100" />
+          <column index="34" width="100" />
+          <column index="35" width="100" />
+          <column index="36" width="100" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-707">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
+          <folding>
+            <element signature="e#49#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+        <state relative-caret-position="466">
+          <caret line="189" column="58" lean-forward="false" selection-start-line="189" selection-start-column="58" selection-end-line="189" selection-end-column="58" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/x_train_corr.csv">
+      <provider selected="true" editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
+          <column index="0" width="100" />
+          <column index="1" width="100" />
+          <column index="2" width="100" />
+          <column index="3" width="100" />
+          <column index="4" width="100" />
+          <column index="5" width="100" />
+          <column index="6" width="100" />
+          <column index="7" width="100" />
+          <column index="8" width="100" />
+          <column index="9" width="100" />
+          <column index="10" width="100" />
+          <column index="11" width="100" />
+          <column index="12" width="100" />
+          <column index="13" width="100" />
+          <column index="14" width="100" />
+          <column index="15" width="100" />
+          <column index="16" width="100" />
+          <column index="17" width="100" />
+          <column index="18" width="100" />
+          <column index="19" width="100" />
+          <column index="20" width="100" />
+          <column index="21" width="100" />
+          <column index="22" width="100" />
+          <column index="23" width="100" />
+          <column index="24" width="100" />
+          <column index="25" width="100" />
+          <column index="26" width="100" />
+          <column index="27" width="100" />
+          <column index="28" width="100" />
+          <column index="29" width="100" />
+          <column index="30" width="100" />
+          <column index="31" width="100" />
+          <column index="32" width="100" />
+          <column index="33" width="100" />
+          <column index="34" width="100" />
+          <column index="35" width="100" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
