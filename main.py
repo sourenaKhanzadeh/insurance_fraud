@@ -139,12 +139,20 @@ class Classifier(ABC):
 
 
     def save_plots(self):
-        pass
+        self.correlation_heat_map()
+        self.sex_ratio_pie_chart()
+        self.scatter_matrix()
+        self.property_claim_damage()
+        self.incident_collision_type_severity()
+        self.graph_witnesses_time_loc()
+        self.graph_hobbies()
 
     def correlation_heat_map(self):
         x = pd.DataFrame(self.x_train, columns=list(clf.dataset.columns)[:-1])
 
         x = x.drop(['incident_date', 'policy_bind_date', 'incident_location'], axis=1)
+
+        x.astype(float).corr().to_csv("x_train_corr.csv")
 
         plt.figure(figsize=(15, 12))
         plt.title("correlation matrix")
@@ -152,6 +160,84 @@ class Classifier(ABC):
         sns.heatmap(x.astype(float).corr(), annot=False, cmap='Blues')
         plt.savefig("plots/correlation_matrix.png")
         plt.clf()
+        plt.close()
+
+    def sex_ratio_pie_chart(self):
+
+        labels = "Male", "Female"
+        sizes = [len(self.dataset[self.dataset['insured_sex'] == 'MALE']),len(self.dataset[self.dataset['insured_sex'] == "FEMALE"])]
+        explode  = (0, 0.1)
+
+        plt.figure(figsize=(8, 8))
+        plt.title("Male Vs Female Ratio")
+        plt.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+                shadow=True, startangle=90)
+        plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+        plt.savefig('plots/sex_ratio.png')
+        plt.clf()
+        plt.close()
+
+    def scatter_matrix(self):
+
+        plt.figure(figsize=(10,10))
+        sns.set_theme(style="ticks")
+
+        data = pd.concat([self.dataset["insured_sex"],
+                          self.dataset["injury_claim"],
+                          self.dataset["vehicle_claim"],
+                          self.dataset["property_claim"]], axis=1)
+
+        sns.pairplot(data, hue="insured_sex")
+        plt.savefig("plots/claims_matrix.png")
+        plt.clf()
+        plt.close()
+
+    def property_claim_damage(self):
+        plt.figure(figsize=(10, 10))
+        sns.stripplot(x=self.dataset['property_damage'], y=self.dataset['property_claim'], hue=self.dataset['fraud_reported'])
+        plt.savefig("plots/property_claim_damage.png")
+        plt.clf()
+        plt.close()
+
+    def incident_collision_type_severity(self):
+        g = sns.FacetGrid(self.dataset, col="incident_type", hue="incident_severity")
+        g.map(sns.scatterplot, "capital-gains", "collision_type")
+        g.add_legend()
+        plt.savefig("plots/incident_collision_type_severity")
+        plt.clf()
+        plt.close()
+        g = sns.FacetGrid(self.dataset, col="insured_sex", hue="fraud_reported", height=7)
+        g.map(sns.countplot, 'incident_type', order=["Single Vehicle Collision", "Vehicle Theft", "Multi-vehicle Collision", "Parked Car"])
+        g.add_legend()
+        plt.savefig("plots/number_of_frauds_incident_type_by_sex.png")
+        plt.clf()
+        plt.close()
+
+    def graph_witnesses_time_loc(self):
+        g = sns.FacetGrid(self.dataset, col="police_report_available", hue="fraud_reported", height=5)
+        g.map(sns.barplot, "witnesses", "number_of_vehicles_involved")
+        # sns.kdeplot(data=self.dataset, x="witnesses", y="number_of_vehicles_involved", hue="police_report_available")
+        g.add_legend()
+        plt.savefig("plots/graph_witness_no_vehicle.png")
+        plt.clf()
+        plt.close()
+
+    def graph_hobbies(self):
+        plt.figure(figsize=(20, 12))
+        sns.countplot(data=self.dataset, x="insured_hobbies", hue="fraud_reported", palette="Set3")
+        plt.savefig("plots/hobbies.png")
+        plt.clf()
+        plt.close()
+        plt.figure(figsize=(20, 12))
+        sns.countplot(data=self.dataset, x="insured_occupation", hue="fraud_reported", palette="pastel")
+        plt.savefig("plots/occupation.png")
+        plt.clf()
+        plt.close()
+        sns.countplot(data=self.dataset, x="insured_education_level", hue="fraud_reported", palette="cool")
+        plt.savefig("plots/education_level.png")
+        plt.clf()
+        plt.close()
 
     def info(self):
         self._dataset.info()
@@ -227,5 +313,4 @@ if __name__ == "__main__":
 
     print(x)
 
-    clf.correlation_heat_map()
-
+    clf.save_plots()

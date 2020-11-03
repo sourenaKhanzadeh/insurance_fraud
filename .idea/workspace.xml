@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="139ddabf-1a22-472b-a03d-bfde087db4b2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/correlation_matrix.png" afterPath="$PROJECT_DIR$/plots/correlation_matrix.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/insurance_claims.csv" afterPath="$PROJECT_DIR$/insurance_claims.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/x_train_corr.csv" afterPath="$PROJECT_DIR$/x_train_corr.csv" />
     </list>
@@ -14,95 +16,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/final_project$main.coverage" NAME="main Coverage Results" MODIFIED="1604338559294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/final_project$main.coverage" NAME="main Coverage Results" MODIFIED="1604360957602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="154" column="0" lean-forward="true" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#2165#6051#0" expanded="false" />
-                <element signature="e#6102#6939#0" expanded="false" />
-                <element signature="e#7013#7584#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="correlation_matrix.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plots/correlation_matrix.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="x_train_corr.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/x_train_corr.csv">
-          <provider selected="true" editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
-              <column index="0" width="100" />
-              <column index="1" width="100" />
-              <column index="2" width="100" />
-              <column index="3" width="100" />
-              <column index="4" width="100" />
-              <column index="5" width="100" />
-              <column index="6" width="100" />
-              <column index="7" width="100" />
-              <column index="8" width="100" />
-              <column index="9" width="100" />
-              <column index="10" width="100" />
-              <column index="11" width="100" />
-              <column index="12" width="100" />
-              <column index="13" width="100" />
-              <column index="14" width="100" />
-              <column index="15" width="100" />
-              <column index="16" width="100" />
-              <column index="17" width="100" />
-              <column index="18" width="100" />
-              <column index="19" width="100" />
-              <column index="20" width="100" />
-              <column index="21" width="100" />
-              <column index="22" width="100" />
-              <column index="23" width="100" />
-              <column index="24" width="100" />
-              <column index="25" width="100" />
-              <column index="26" width="100" />
-              <column index="27" width="100" />
-              <column index="28" width="100" />
-              <column index="29" width="100" />
-              <column index="30" width="100" />
-              <column index="31" width="100" />
-              <column index="32" width="100" />
-              <column index="33" width="100" />
-              <column index="34" width="100" />
-              <column index="35" width="100" />
-            </state>
-          </provider>
-          <provider editor-type-id="csv-text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logistic_regression.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
-              <folding>
-                <element signature="e#49#67#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="insurance_claims.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/insurance_claims.csv">
           <provider selected="true" editor-type-id="csv-table-editor">
@@ -149,9 +67,28 @@
             </state>
           </provider>
           <provider editor-type-id="csv-text-editor">
-            <state relative-caret-position="-9">
-              <caret line="20" column="71" lean-forward="false" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="71" />
+            <state relative-caret-position="17">
+              <caret line="21" column="71" lean-forward="false" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="71" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1029">
+              <caret line="226" column="30" lean-forward="false" selection-start-line="226" selection-start-column="30" selection-end-line="226" selection-end-column="30" />
+              <folding>
+                <element signature="e#377#2126#0" expanded="false" />
+                <element signature="e#2165#6051#0" expanded="false" />
+                <element signature="e#6102#6939#0" expanded="false" />
+                <element signature="e#7013#7584#0" expanded="false" />
+                <element signature="e#7913#8418#0" expanded="false" />
+                <element signature="e#8464#9016#0" expanded="false" />
+                <element signature="e#9057#9489#0" expanded="false" />
+                <element signature="e#9536#9784#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,6 +105,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>?</find>
+      <find>palette</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -176,6 +114,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/insurance_claims.csv" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -218,20 +157,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="final_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="final_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="final_project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plots" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -461,14 +386,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23293608" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29144096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28518122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -573,7 +498,7 @@
         <state relative-caret-position="119">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
           <folding>
-            <element signature="e#49#67#0" expanded="true" />
+            <element signature="e#49#67#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -583,10 +508,15 @@
         <state relative-caret-position="510">
           <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
+            <element signature="e#377#2126#0" expanded="false" />
             <element signature="e#2165#6051#0" expanded="false" />
             <element signature="e#6102#6939#0" expanded="false" />
             <element signature="e#7013#7584#0" expanded="false" />
+            <element signature="e#7913#8418#0" expanded="false" />
+            <element signature="e#8464#9016#0" expanded="false" />
+            <element signature="e#9057#9489#0" expanded="false" />
+            <element signature="e#9536#9784#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -647,7 +577,7 @@
         <state relative-caret-position="119">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
           <folding>
-            <element signature="e#49#67#0" expanded="true" />
+            <element signature="e#49#67#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -657,10 +587,15 @@
         <state relative-caret-position="323">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
+            <element signature="e#377#2126#0" expanded="false" />
             <element signature="e#2165#6051#0" expanded="false" />
             <element signature="e#6102#6939#0" expanded="false" />
             <element signature="e#7013#7584#0" expanded="false" />
+            <element signature="e#7913#8418#0" expanded="false" />
+            <element signature="e#8464#9016#0" expanded="false" />
+            <element signature="e#9057#9489#0" expanded="false" />
+            <element signature="e#9536#9784#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -670,10 +605,15 @@
         <state relative-caret-position="102">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
+            <element signature="e#377#2126#0" expanded="false" />
             <element signature="e#2165#6051#0" expanded="false" />
             <element signature="e#6102#6939#0" expanded="false" />
             <element signature="e#7013#7584#0" expanded="false" />
+            <element signature="e#7913#8418#0" expanded="false" />
+            <element signature="e#8464#9016#0" expanded="false" />
+            <element signature="e#9057#9489#0" expanded="false" />
+            <element signature="e#9536#9784#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -683,7 +623,7 @@
         <state relative-caret-position="51">
           <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#49#67#0" expanded="true" />
+            <element signature="e#49#67#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -827,12 +767,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/pandas/core/indexes/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="2894" column="0" lean-forward="false" selection-start-line="2894" selection-start-column="0" selection-end-line="2894" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/logistic_regression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
+        <state relative-caret-position="-618">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
           <folding>
-            <element signature="e#49#67#0" expanded="true" />
+            <element signature="e#49#67#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -876,6 +824,8 @@
           <column index="33" width="100" />
           <column index="34" width="100" />
           <column index="35" width="100" />
+          <column index="36" width="100" />
+          <column index="37" width="100" />
         </state>
       </provider>
       <provider editor-type-id="csv-text-editor">
@@ -883,6 +833,72 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/seaborn/axisgrid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="298" column="8" lean-forward="false" selection-start-line="298" selection-start-column="8" selection-end-line="298" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/seaborn/categorical.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="3662" column="33" lean-forward="false" selection-start-line="3662" selection-start-column="26" selection-end-line="3662" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/number_of_frauds_incident_type_by_sex.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/claims_matrix.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/correlation_matrix.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/graph_witness_no_vehicle.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/education_level.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/hobbies.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/incident_collision_type_severity.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/occupation.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/property_claim_damage.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/sex_ratio.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/insurance_claims.csv">
@@ -930,8 +946,8 @@
         </state>
       </provider>
       <provider editor-type-id="csv-text-editor">
-        <state relative-caret-position="-9">
-          <caret line="20" column="71" lean-forward="false" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="71" />
+        <state relative-caret-position="17">
+          <caret line="21" column="71" lean-forward="false" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="71" />
           <folding />
         </state>
       </provider>
@@ -942,30 +958,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/pandas/core/indexes/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="2894" column="0" lean-forward="false" selection-start-line="2894" selection-start-column="0" selection-end-line="2894" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="154" column="0" lean-forward="true" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+        <state relative-caret-position="-1029">
+          <caret line="226" column="30" lean-forward="false" selection-start-line="226" selection-start-column="30" selection-end-line="226" selection-end-column="30" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#377#2126#0" expanded="false" />
             <element signature="e#2165#6051#0" expanded="false" />
             <element signature="e#6102#6939#0" expanded="false" />
             <element signature="e#7013#7584#0" expanded="false" />
+            <element signature="e#7913#8418#0" expanded="false" />
+            <element signature="e#8464#9016#0" expanded="false" />
+            <element signature="e#9057#9489#0" expanded="false" />
+            <element signature="e#9536#9784#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plots/correlation_matrix.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
   </component>
