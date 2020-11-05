@@ -5,22 +5,29 @@ import seaborn as sns
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
+from sklearn.linear_model import LogisticRegression
 
 
 from abc import ABC, abstractmethod
 
 class Classifier(ABC):
+    classifier_name = "[ENTER NAME]"
 
-    def __init__(self, csv="insurance_claims.csv"):
+    def __init__(self, csv="insurance_claims.csv", all_data=False):
         # set missing values to Nan
         self._dataset = pd.read_csv(csv).replace('?', np.NaN)
         self._dataset.isnull().any()
+        self._dataset.fillna(0)
+
+        self._all_data = all_data
+        self._clf = None
+
 
         self.better_disturbute_dataset()
 
         self._X = self._dataset.iloc[:, :-1].values
         self._y = self._dataset.iloc[:, -1].values
-
 
         self.auto_model_vs_fraud_report = self._dataset[['auto_model']]
         self.auto_make_vs_fraud_report = self._dataset[['auto_make']]
@@ -42,18 +49,23 @@ class Classifier(ABC):
 
         self.preProcessing()
 
+
         # model selection
-        self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(self._X, self._y, test_size=0.2, random_state=0)
+        self.x_train, self.x_test, self.y_train, self.y_test = None, None, None, None
 
     def preProcessing(self):
         #encode the fraud reported column
         label_encoder = LabelEncoder()
         column_transfer =  ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])], remainder='passthrough')
+
+        self._y = self._y.astype(str)
         self._y = label_encoder.fit_transform(self._y)
 
         # turn dates into time stamp
-        self._X[:, 3] = pd.to_datetime(self._X[:, 3], errors='coerce')
-        self._X[:, 17] = pd.to_datetime(self._X[:, 17], errors='coerce')
+        # self._X[:, 3] = pd.to_datetime(self._X[:, 3], errors='coerce')
+        # self._X[:, 17] = pd.to_datetime(self._X[:, 17], errors='coerce')
+        # self._X = np.delete(self._X, 3, 1)
+        # self._X = np.delete(self._X, 16, 1)
 
         # group auto_model with fraud report to find correlation between each
         self.auto_model_vs_fraud_report = self.correlation_encode(self.auto_model_vs_fraud_report, 'auto_model', 36)
@@ -106,24 +118,27 @@ class Classifier(ABC):
         # group policy_state with fraud report to find correlation between each
         self.policy_state_vs_fraud = self.correlation_encode(self.policy_state_vs_fraud, 'policy_state', 4)
 
+
     def better_disturbute_dataset(self):
         self._dataset['incident_date'] = pd.to_datetime(self._dataset['incident_date'], errors='coerce')
 
         # extracting days and month from date
         self._dataset['incident_month'] = self._dataset['incident_date'].dt.month
         self._dataset['incident_day'] = self._dataset['incident_date'].dt.day
+
         temp = self._dataset
         self._dataset = self._dataset.drop(['fraud_reported'], axis=1)
         self._dataset['fraud_reported'] = temp['fraud_reported']
 
         del temp
 
-        data = self._dataset
-        needed_fraud_columns = int(0.8 * len(data[data['fraud_reported'] == 'Y']))
-        data_fraud = data[data['fraud_reported'] == 'Y'].head(needed_fraud_columns)
-        data_not_fraud = data[data['fraud_reported'] == 'N'].head(needed_fraud_columns)
+        if not self._all_data:
+            data = self._dataset
+            needed_fraud_columns = int(0.8 * len(data[data['fraud_reported'] == 'Y']))
+            data_fraud = data[data['fraud_reported'] == 'Y'].head(needed_fraud_columns)
+            data_not_fraud = data[data['fraud_reported'] == 'N'].head(needed_fraud_columns)
 
-        self._dataset  = pd.concat([data_fraud, data_not_fraud])
+            self._dataset  = pd.concat([data_fraud, data_not_fraud])
 
     def correlation_encode(self, model_vs_fraud, model, index):
         model_vs_fraud = model_vs_fraud.join(pd.DataFrame(self._y, columns=['fraud_reported']))
@@ -250,6 +265,31 @@ class Classifier(ABC):
 
     @abstractmethod
     def fit(self):
+        self._X = np.delete(self._X, 3, 1)
+        self._X = np.delete(self._X, 16, 1)
+        self._X = np.delete(self._X, 22, 1)
+
+        # model selection
+        self.x_train, self.x_test, self.y_train, self.y_test = train_test_split(self._X, self._y, test_size=0.2, random_state=0)
+
+        self.x_train = pd.DataFrame(self.x_train).fillna(0)
+
+        self.x_test = pd.DataFrame(self.x_test).fillna(0)
+
+        self.x_train = self.x_train.to_numpy()
+
+        self.x_test= self.x_test.to_numpy()
+
+    @abstractmethod
+    def accuracy(self):
+        pass
+
+    @abstractmethod
+    def predict(self):
+        pass
+
+    @abstractmethod
+    def confusion_matrix(self):
         pass
 
     @property
@@ -272,15 +312,68 @@ class Classifier(ABC):
         self._y = val
 
 
+    def __str__(self):
+        res = """
+    ===========================
+    {} Classifier
+    ===========================
+    Confusion Matrix: {}
+    Training Accuracy: {}
+    Testing Accuracy: {}
+        """.format(
+            self.classifier_name,
+            np.array(self.confusion_matrix()),
+            self._clf.score(self.x_train, self.y_train),
+            self._clf.score(self.x_test, self.y_test)
+        )
+
+        return res
+
 class Logistic(Classifier):
+    classifier_name = "Logistic"
+
+
+    def __init__(self, csv="insurance_claims.csv", all_data=False):
+        super().__init__(csv, all_data)
+
 
     def fit(self):
-        pass
+        super().fit()
 
+        clf = LogisticRegression(random_state=0)
+        clf.fit(self.x_train, self.y_train)
+
+        self._clf = clf
+
+    def accuracy(self):
+        return accuracy_score(self.y_test, self.predict())
+
+    def predict(self):
+        return self._clf.predict(self.x_test)
+
+    def confusion_matrix(self):
+        return confusion_matrix(self.y_test, self.predict())
+
+    def __str__(self):
+        res = super().__str__()
+        res += """
+    Accuracy: {}
+    {}
+        """.format(
+            accuracy_score(self.y_test, self.predict()),
+            classification_report(self.y_test, self.predict())
+        )
+
+        return res
 
 if __name__ == "__main__":
     from collections import Counter
-    clf = Logistic()
+    from warnings import filterwarnings
+
+    filterwarnings("ignore")
+
+    clf = Logistic(all_data=False)
+
     count = Counter(clf.y)
     print(count)
     print(clf.auto_model_vs_fraud_report)
@@ -305,12 +398,15 @@ if __name__ == "__main__":
     # print(clf.X[:, 10:15])
     # print(clf.X[:, 4:6])
 
-    x = pd.DataFrame(clf.x_train, columns=list(clf.dataset.columns)[:-1])
-
-    x = x.drop(['incident_date', 'policy_bind_date', 'incident_location'], axis=1)
-
     # x.astype(float).corr().to_csv("x_train_corr.csv", ",")
 
-    print(x)
 
     clf.save_plots()
+
+
+    # fit the model
+    clf.fit()
+
+
+    print(clf)
+
