@@ -7,6 +7,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
 
 
 from abc import ABC, abstractmethod
@@ -292,6 +293,10 @@ class Classifier(ABC):
     def confusion_matrix(self):
         pass
 
+    def draw_confusion_matrix(self):
+        sns.heatmap(self.confusion_matrix(), annot=True, cmap='spring')
+        plt.show()
+
     @property
     def X(self):
         return self._X
@@ -360,11 +365,46 @@ class Logistic(Classifier):
     Accuracy: {}
     {}
         """.format(
-            accuracy_score(self.y_test, self.predict()),
+            self.accuracy(),
             classification_report(self.y_test, self.predict())
         )
 
         return res
+
+class SVC_(Classifier):
+
+    classifier_name = "SVM"
+
+    def fit(self):
+        super().fit()
+
+        clf = SVC()
+        clf.fit(self.x_train, self.y_train)
+
+        self._clf = clf
+
+    def accuracy(self):
+        return accuracy_score(self.y_test, self.predict())
+
+    def predict(self):
+        return self._clf.predict(self.x_test)
+
+    def confusion_matrix(self):
+        return confusion_matrix(self.y_test, self.predict())
+
+    def __str__(self):
+        res = super().__str__()
+        res += """
+    Accuracy: {}
+    {}
+        """.format(
+            self.accuracy(),
+            classification_report(self.y_test, self.predict())
+        )
+
+        return res
+
+
 
 if __name__ == "__main__":
     from collections import Counter
@@ -394,12 +434,6 @@ if __name__ == "__main__":
     print(clf.policy_csl_vs_fraud)
     print(clf.policy_state_vs_fraud)
 
-    # print(clf.X[:, 18:24])
-    # print(clf.X[:, 10:15])
-    # print(clf.X[:, 4:6])
-
-    # x.astype(float).corr().to_csv("x_train_corr.csv", ",")
-
 
     clf.save_plots()
 
@@ -407,6 +441,19 @@ if __name__ == "__main__":
     # fit the model
     clf.fit()
 
-
+    # get logistic classifier details
     print(clf)
+
+    # Support Vector Machine
+    svm = SVC_(all_data=False)
+
+    # fit the model
+    svm.fit()
+
+    print(svm)
+
+
+
+
+
 
