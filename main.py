@@ -167,7 +167,13 @@ class Classifier(ABC):
         self.graph_hobbies()
 
     def correlation_heat_map(self):
-        x = pd.DataFrame(self.x_train, columns=list(clf.dataset.columns)[:-1])
+        # model selection
+        x_train, x_test, y_train, y_test = train_test_split(self._X, self._y, test_size=0.2,
+                                                                                random_state=0)
+
+        x_train = np.column_stack((x_train, y_train))
+
+        x = pd.DataFrame(x_train, columns=list(self._dataset.columns))
 
         x = x.drop(['incident_date', 'policy_bind_date', 'incident_location'], axis=1)
 
@@ -544,7 +550,7 @@ if __name__ == "__main__":
 
     filterwarnings("ignore")
 
-    clf = Logistic(all_data=True)
+    clf = Logistic(all_data=False)
 
     count = Counter(clf.y)
     print(count)
@@ -567,7 +573,7 @@ if __name__ == "__main__":
     print(clf.policy_state_vs_fraud)
 
 
-    clf.save_plots()
+    # clf.save_plots()
 
 
     # fit the model
@@ -577,7 +583,7 @@ if __name__ == "__main__":
     print(clf)
 
     # Support Vector Machine
-    svm = SVC_(all_data=True)
+    svm = SVC_(all_data=False)
 
     # fit the model
     svm.fit()
@@ -585,7 +591,7 @@ if __name__ == "__main__":
     print(svm)
 
     # K nearest neighbors
-    knn = KNN(all_data=True)
+    knn = KNN(all_data=False)
 
     # fit the model
     knn.fit()
@@ -593,7 +599,7 @@ if __name__ == "__main__":
     print(knn)
 
     # Naive Bayes
-    nb = NaiveBayes(all_data=True)
+    nb = NaiveBayes(all_data=False)
 
     # fit model
     nb.fit()
@@ -601,7 +607,7 @@ if __name__ == "__main__":
     print(nb)
 
     # Decision Tree
-    dt = DecisionTree(all_data=True)
+    dt = DecisionTree(all_data=False)
 
     # fit the model
     dt.fit()
@@ -609,13 +615,14 @@ if __name__ == "__main__":
     print(dt)
 
     #Random Forest
-    rf = RandomForest(all_data=True)
+    rf = RandomForest(all_data=False)
 
     #fit the model
     rf.fit()
 
 
     print(rf)
+
 
 
 
