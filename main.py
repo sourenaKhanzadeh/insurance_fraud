@@ -8,7 +8,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
-
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 from abc import ABC, abstractmethod
 
@@ -378,7 +381,7 @@ class SVC_(Classifier):
     def fit(self):
         super().fit()
 
-        clf = SVC()
+        clf = SVC(kernel='sigmoid', random_state=0)
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -404,6 +407,135 @@ class SVC_(Classifier):
 
         return res
 
+class KNN(Classifier):
+    classifier_name = "K-NN"
+
+    def fit(self):
+        super().fit()
+
+        clf = KNeighborsClassifier(n_neighbors=15, metric="minkowski", p=1)
+        clf.fit(self.x_train, self.y_train)
+
+        self._clf = clf
+
+    def accuracy(self):
+        return accuracy_score(self.y_test, self.predict())
+
+    def predict(self):
+        return self._clf.predict(self.x_test)
+
+    def confusion_matrix(self):
+        return confusion_matrix(self.y_test, self.predict())
+
+    def __str__(self):
+        res = super().__str__()
+        res += """
+       Accuracy: {}
+       {}
+           """.format(
+            self.accuracy(),
+            classification_report(self.y_test, self.predict())
+        )
+
+        return res
+
+class NaiveBayes(Classifier):
+    classifier_name = "Naive Bayes"
+
+    def fit(self):
+        super().fit()
+
+        clf = GaussianNB()
+        clf.fit(self.x_train, self.y_train)
+
+        self._clf = clf
+
+    def accuracy(self):
+        return accuracy_score(self.y_test, self.predict())
+
+    def predict(self):
+        return self._clf.predict(self.x_test)
+
+    def confusion_matrix(self):
+        return confusion_matrix(self.y_test, self.predict())
+
+    def __str__(self):
+        res = super().__str__()
+        res += """
+       Accuracy: {}
+       {}
+           """.format(
+            self.accuracy(),
+            classification_report(self.y_test, self.predict())
+        )
+
+        return res
+
+
+class DecisionTree(Classifier):
+    classifier_name = "Decision Tree"
+
+    def fit(self):
+        super().fit()
+
+        clf = DecisionTreeClassifier(criterion="entropy", random_state=0)
+        clf.fit(self.x_train, self.y_train)
+
+        self._clf = clf
+
+    def accuracy(self):
+        return accuracy_score(self.y_test, self.predict())
+
+    def predict(self):
+        return self._clf.predict(self.x_test)
+
+    def confusion_matrix(self):
+        return confusion_matrix(self.y_test, self.predict())
+
+    def __str__(self):
+        res = super().__str__()
+        res += """
+       Accuracy: {}
+       {}
+           """.format(
+            self.accuracy(),
+            classification_report(self.y_test, self.predict())
+        )
+
+        return res
+
+
+class RandomForest(Classifier):
+    classifier_name = "Random Forest"
+
+    def fit(self):
+        super().fit()
+
+        clf = RandomForestClassifier(n_estimators=10,criterion="entropy", random_state=0)
+        clf.fit(self.x_train, self.y_train)
+
+        self._clf = clf
+
+    def accuracy(self):
+        return accuracy_score(self.y_test, self.predict())
+
+    def predict(self):
+        return self._clf.predict(self.x_test)
+
+    def confusion_matrix(self):
+        return confusion_matrix(self.y_test, self.predict())
+
+    def __str__(self):
+        res = super().__str__()
+        res += """
+           Accuracy: {}
+           {}
+               """.format(
+            self.accuracy(),
+            classification_report(self.y_test, self.predict())
+        )
+
+        return res
 
 
 if __name__ == "__main__":
@@ -412,7 +544,7 @@ if __name__ == "__main__":
 
     filterwarnings("ignore")
 
-    clf = Logistic(all_data=False)
+    clf = Logistic(all_data=True)
 
     count = Counter(clf.y)
     print(count)
@@ -445,12 +577,46 @@ if __name__ == "__main__":
     print(clf)
 
     # Support Vector Machine
-    svm = SVC_(all_data=False)
+    svm = SVC_(all_data=True)
 
     # fit the model
     svm.fit()
 
     print(svm)
+
+    # K nearest neighbors
+    knn = KNN(all_data=True)
+
+    # fit the model
+    knn.fit()
+
+    print(knn)
+
+    # Naive Bayes
+    nb = NaiveBayes(all_data=True)
+
+    # fit model
+    nb.fit()
+
+    print(nb)
+
+    # Decision Tree
+    dt = DecisionTree(all_data=True)
+
+    # fit the model
+    dt.fit()
+
+    print(dt)
+
+    #Random Forest
+    rf = RandomForest(all_data=True)
+
+    #fit the model
+    rf.fit()
+
+
+    print(rf)
+
 
 
 
