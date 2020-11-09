@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 from sklearn.compose import ColumnTransformer
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, StratifiedKFold
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
@@ -12,6 +12,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.neural_network import MLPClassifier
 
 from abc import ABC, abstractmethod
 
@@ -138,9 +139,11 @@ class Classifier(ABC):
 
         if not self._all_data:
             data = self._dataset
-            needed_fraud_columns = int(0.8 * len(data[data['fraud_reported'] == 'Y']))
-            data_fraud = data[data['fraud_reported'] == 'Y'].head(needed_fraud_columns)
-            data_not_fraud = data[data['fraud_reported'] == 'N'].head(needed_fraud_columns)
+            needed_fraud_columns = int(1 * len(data[data['fraud_reported'] == 'Y']))
+            # data_fraud = data[data['fraud_reported'] == 'Y'].head(needed_fraud_columns)
+            # data_not_fraud = data[data['fraud_reported'] == 'N'].head(needed_fraud_columns + 24)
+            data_fraud = data[data['fraud_reported'] == 'Y'].head(230)
+            data_not_fraud = data[data['fraud_reported'] == 'N'].head(230)
 
             self._dataset  = pd.concat([data_fraud, data_not_fraud])
 
@@ -301,6 +304,24 @@ class Classifier(ABC):
     @abstractmethod
     def confusion_matrix(self):
         pass
+
+    def cross_valid(self):
+        kf = StratifiedKFold(n_splits=5)
+        scores = []
+
+        for train_i, test_i in kf.split(self._X, self._y):
+            x_train, x_test, y_train, y_test = self._X[train_i], self._X[test_i], self._y[train_i], self._y[test_i]
+
+            x_train = pd.DataFrame(x_train).fillna(0)
+            x_test = pd.DataFrame(x_test).fillna(0)
+            x_train = x_train.to_numpy()
+            x_test = x_test.to_numpy()
+
+            self._clf.fit(x_train, y_train)
+            scores.append(self._clf.score(x_test, y_test))
+
+        return np.mean(np.array(scores))
+
 
     def draw_confusion_matrix(self):
         sns.heatmap(self.confusion_matrix(), annot=True, cmap='spring')
@@ -517,7 +538,7 @@ class RandomForest(Classifier):
     def fit(self):
         super().fit()
 
-        clf = RandomForestClassifier(n_estimators=10,criterion="entropy", random_state=0)
+        clf = RandomForestClassifier(n_estimators=40,criterion="entropy", random_state=0)
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -544,89 +565,83 @@ class RandomForest(Classifier):
         return res
 
 
+class NN(Classifier):
+    classifier_name = "Neural Network MLP"
+
+    def fit(self):
+        super().fit()
+
+        clf = MLPClassifier(activation="logistic",solver='lbfgs',
+                     hidden_layer_sizes=(5, 15), random_state=1)
+
+        clf.fit(self.x_train, self.y_train)
+
+        self._clf = clf
+
+    def accuracy(self):
+        return accuracy_score(self.y_test, self.predict())
+
+    def predict(self):
+        return self._clf.predict(self.x_test)
+
+    def confusion_matrix(self):
+        return confusion_matrix(self.y_test, self.predict())
+
+    def __str__(self):
+        res = super().__str__()
+        res += """
+               Accuracy: {}
+               {}
+                   """.format(
+            self.accuracy(),
+            classification_report(self.y_test, self.predict())
+        )
+
+        return res
+
+
 if __name__ == "__main__":
     from collections import Counter
     from warnings import filterwarnings
 
     filterwarnings("ignore")
 
-    clf = Logistic(all_data=False)
+    lg = Logistic(all_data=False)
 
-    count = Counter(clf.y)
+    count = Counter(lg.y)
     print(count)
-    print(clf.auto_model_vs_fraud_report)
-    print(clf.auto_make_vs_fraud_report)
-    print(clf.police_availaible_vs_fraud)
-    print(clf.property_damage_vs_fraud)
-    print(clf.incident_city_vs_fraud)
-    print(clf.incident_state_vs_fraud)
-    print(clf.authorities_contacted_vs_fraud)
-    print(clf.incident_severity_vs_fraud)
-    print(clf.collision_type_vs_fraud)
-    print(clf.incident_type_vs_fraud)
-    print(clf.insured_relationship_vs_fraud)
-    print(clf.insured_hobbies_vs_fraud)
-    print(clf.insured_occupation_vs_fraud)
-    print(clf.insured_education_level_vs_fraud)
-    print(clf.insured_sex_vs_fraud)
-    print(clf.policy_csl_vs_fraud)
-    print(clf.policy_state_vs_fraud)
+    print(lg.auto_model_vs_fraud_report)
+    print(lg.auto_make_vs_fraud_report)
+    print(lg.police_availaible_vs_fraud)
+    print(lg.property_damage_vs_fraud)
+    print(lg.incident_city_vs_fraud)
+    print(lg.incident_state_vs_fraud)
+    print(lg.authorities_contacted_vs_fraud)
+    print(lg.incident_severity_vs_fraud)
+    print(lg.collision_type_vs_fraud)
+    print(lg.incident_type_vs_fraud)
+    print(lg.insured_relationship_vs_fraud)
+    print(lg.insured_hobbies_vs_fraud)
+    print(lg.insured_occupation_vs_fraud)
+    print(lg.insured_education_level_vs_fraud)
+    print(lg.insured_sex_vs_fraud)
+    print(lg.policy_csl_vs_fraud)
+    print(lg.policy_state_vs_fraud)
 
+    all_data = [False, False, False, False, False, False]
 
-    # clf.save_plots()
+    clfs = [lg,
+            SVC_(all_data=all_data[0]),
+            KNN(all_data=all_data[1]),
+            NaiveBayes(all_data=all_data[2]),
+            DecisionTree(all_data=all_data[3]),
+            RandomForest(all_data=all_data[4]),
+            NN(all_data=all_data[5])]
 
+    with open("experiment.txt", 'w+') as file:
+        for clf in clfs:
+            clf.fit()
 
-    # fit the model
-    clf.fit()
-
-    # get logistic classifier details
-    print(clf)
-
-    # Support Vector Machine
-    svm = SVC_(all_data=False)
-
-    # fit the model
-    svm.fit()
-
-    print(svm)
-
-    # K nearest neighbors
-    knn = KNN(all_data=False)
-
-    # fit the model
-    knn.fit()
-
-    print(knn)
-
-    # Naive Bayes
-    nb = NaiveBayes(all_data=False)
-
-    # fit model
-    nb.fit()
-
-    print(nb)
-
-    # Decision Tree
-    dt = DecisionTree(all_data=False)
-
-    # fit the model
-    dt.fit()
-
-    print(dt)
-
-    #Random Forest
-    rf = RandomForest(all_data=False)
-
-    #fit the model
-    rf.fit()
-
-
-    print(rf)
-
-
-
-
-
-
-
+            file.write(str(clf))
+            file.write("Cross Validation Score(5 fold 20%): {}".format(clf.cross_valid()))
 

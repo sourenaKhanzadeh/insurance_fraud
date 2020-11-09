@@ -1,0 +1,134 @@
+
+    ===========================
+    Logistic Classifier
+    ===========================
+    Confusion Matrix: [[24 24]
+ [15 29]]
+    Training Accuracy: 0.6032608695652174
+    Testing Accuracy: 0.5760869565217391
+        
+    Accuracy: 0.5760869565217391
+                  precision    recall  f1-score   support
+
+           0       0.62      0.50      0.55        48
+           1       0.55      0.66      0.60        44
+
+    accuracy                           0.58        92
+   macro avg       0.58      0.58      0.57        92
+weighted avg       0.58      0.58      0.57        92
+
+        Cross Validation Score(5 fold 20%): 0.5891304347826087
+    ===========================
+    SVM Classifier
+    ===========================
+    Confusion Matrix: [[39  9]
+ [33 11]]
+    Training Accuracy: 0.5135869565217391
+    Testing Accuracy: 0.5434782608695652
+        
+    Accuracy: 0.5434782608695652
+                  precision    recall  f1-score   support
+
+           0       0.54      0.81      0.65        48
+           1       0.55      0.25      0.34        44
+
+    accuracy                           0.54        92
+   macro avg       0.55      0.53      0.50        92
+weighted avg       0.55      0.54      0.50        92
+
+        Cross Validation Score(5 fold 20%): 0.5217391304347826
+    ===========================
+    K-NN Classifier
+    ===========================
+    Confusion Matrix: [[26 22]
+ [22 22]]
+    Training Accuracy: 0.6304347826086957
+    Testing Accuracy: 0.5217391304347826
+        
+       Accuracy: 0.5217391304347826
+                     precision    recall  f1-score   support
+
+           0       0.54      0.54      0.54        48
+           1       0.50      0.50      0.50        44
+
+    accuracy                           0.52        92
+   macro avg       0.52      0.52      0.52        92
+weighted avg       0.52      0.52      0.52        92
+
+           Cross Validation Score(5 fold 20%): 0.5369565217391304
+    ===========================
+    Naive Bayes Classifier
+    ===========================
+    Confusion Matrix: [[19 29]
+ [ 9 35]]
+    Training Accuracy: 0.6195652173913043
+    Testing Accuracy: 0.5869565217391305
+        
+       Accuracy: 0.5869565217391305
+                     precision    recall  f1-score   support
+
+           0       0.68      0.40      0.50        48
+           1       0.55      0.80      0.65        44
+
+    accuracy                           0.59        92
+   macro avg       0.61      0.60      0.57        92
+weighted avg       0.62      0.59      0.57        92
+
+           Cross Validation Score(5 fold 20%): 0.6
+    ===========================
+    Decision Tree Classifier
+    ===========================
+    Confusion Matrix: [[37 11]
+ [10 34]]
+    Training Accuracy: 1.0
+    Testing Accuracy: 0.7717391304347826
+        
+       Accuracy: 0.7717391304347826
+                     precision    recall  f1-score   support
+
+           0       0.79      0.77      0.78        48
+           1       0.76      0.77      0.76        44
+
+    accuracy                           0.77        92
+   macro avg       0.77      0.77      0.77        92
+weighted avg       0.77      0.77      0.77        92
+
+           Cross Validation Score(5 fold 20%): 0.758695652173913
+    ===========================
+    Random Forest Classifier
+    ===========================
+    Confusion Matrix: [[38 10]
+ [15 29]]
+    Training Accuracy: 1.0
+    Testing Accuracy: 0.7282608695652174
+        
+           Accuracy: 0.7282608695652174
+                         precision    recall  f1-score   support
+
+           0       0.72      0.79      0.75        48
+           1       0.74      0.66      0.70        44
+
+    accuracy                           0.73        92
+   macro avg       0.73      0.73      0.73        92
+weighted avg       0.73      0.73      0.73        92
+
+               Cross Validation Score(5 fold 20%): 0.7543478260869565
+    ===========================
+    Neural Network MLP Classifier
+    ===========================
+    Confusion Matrix: [[39  9]
+ [33 11]]
+    Training Accuracy: 0.5135869565217391
+    Testing Accuracy: 0.5434782608695652
+        
+               Accuracy: 0.5434782608695652
+                             precision    recall  f1-score   support
+
+           0       0.54      0.81      0.65        48
+           1       0.55      0.25      0.34        44
+
+    accuracy                           0.54        92
+   macro avg       0.55      0.53      0.50        92
+weighted avg       0.55      0.54      0.50        92
+
+                   Cross Validation Score(5 fold 20%): 0.5173913043478261
