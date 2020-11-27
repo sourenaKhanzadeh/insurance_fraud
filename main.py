@@ -505,7 +505,7 @@ class DecisionTree(Classifier):
     def fit(self):
         super().fit()
 
-        clf = DecisionTreeClassifier(criterion="entropy", random_state=0)
+        clf = DecisionTreeClassifier(criterion="entropy", random_state=0, min_samples_leaf=18)
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -538,7 +538,7 @@ class RandomForest(Classifier):
     def fit(self):
         super().fit()
 
-        clf = RandomForestClassifier(n_estimators=40,criterion="entropy", random_state=0)
+        clf = RandomForestClassifier(n_estimators=100,criterion="entropy", random_state=1, min_samples_leaf=5, max_features=25)
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -571,8 +571,8 @@ class NN(Classifier):
     def fit(self):
         super().fit()
 
-        clf = MLPClassifier(activation="logistic",solver='lbfgs',
-                     hidden_layer_sizes=(5, 15), random_state=1)
+        clf = MLPClassifier(activation="tanh",solver='adam',
+                     hidden_layer_sizes=(40, 20, 20), random_state=1)
 
         clf.fit(self.x_train, self.y_train)
 
