@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="139ddabf-1a22-472b-a03d-bfde087db4b2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logistic_regression.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/performance/Decision Tree.png" afterPath="$PROJECT_DIR$/plots/performance/Decision Tree.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/performance/K-NN.png" afterPath="$PROJECT_DIR$/plots/performance/K-NN.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/performance/Logistic.png" afterPath="$PROJECT_DIR$/plots/performance/Logistic.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/performance/Naive Bayes.png" afterPath="$PROJECT_DIR$/plots/performance/Naive Bayes.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/performance/Neural Network MLP.png" afterPath="$PROJECT_DIR$/plots/performance/Neural Network MLP.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/performance/Random Forest.png" afterPath="$PROJECT_DIR$/plots/performance/Random Forest.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plots/performance/SVM.png" afterPath="$PROJECT_DIR$/plots/performance/SVM.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/experiment.txt" afterPath="$PROJECT_DIR$/experiment.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/final_project$main.coverage" NAME="main Coverage Results" MODIFIED="1606860856876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/final_project$main.coverage" NAME="main Coverage Results" MODIFIED="1607752095581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -22,39 +29,71 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="769" column="63" lean-forward="true" selection-start-line="769" selection-start-column="63" selection-end-line="769" selection-end-column="63" />
+            <state relative-caret-position="1107">
+              <caret line="642" column="0" lean-forward="true" selection-start-line="642" selection-start-column="0" selection-end-line="642" selection-end-column="0" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#953#2752#0" expanded="false" />
-                <element signature="e#2791#6811#0" expanded="false" />
-                <element signature="e#6863#7905#0" expanded="false" />
-                <element signature="e#7979#8550#0" expanded="false" />
-                <element signature="e#8587#8833#0" expanded="false" />
-                <element signature="e#8879#9647#0" expanded="false" />
-                <element signature="e#9693#10245#0" expanded="false" />
-                <element signature="e#10286#10718#0" expanded="false" />
-                <element signature="e#10765#11013#0" expanded="false" />
-                <element signature="e#11071#11700#0" expanded="false" />
-                <element signature="e#11750#12154#0" expanded="false" />
-                <element signature="e#12193#12819#0" expanded="false" />
-                <element signature="e#13040#13531#0" expanded="false" />
-                <element signature="e#13749#14310#0" expanded="false" />
-                <element signature="e#15211#16000#0" expanded="false" />
-                <element signature="e#16031#16707#0" expanded="false" />
-                <element signature="e#16736#17446#0" expanded="false" />
-                <element signature="e#17482#18150#0" expanded="false" />
-                <element signature="e#18189#18927#0" expanded="false" />
-                <element signature="e#18966#19749#0" expanded="false" />
-                <element signature="e#19778#20582#0" expanded="false" />
-                <element signature="e#20743#23300#1" expanded="false" />
+                <element signature="e#1060#2859#0" expanded="false" />
+                <element signature="e#2898#6918#0" expanded="false" />
+                <element signature="e#6970#8012#0" expanded="false" />
+                <element signature="e#8086#8657#0" expanded="false" />
+                <element signature="e#8694#8940#0" expanded="false" />
+                <element signature="e#8986#9754#0" expanded="false" />
+                <element signature="e#9800#10352#0" expanded="false" />
+                <element signature="e#10393#10825#0" expanded="false" />
+                <element signature="e#10872#11120#0" expanded="false" />
+                <element signature="e#11178#11807#0" expanded="false" />
+                <element signature="e#11857#12261#0" expanded="false" />
+                <element signature="e#12300#12926#0" expanded="false" />
+                <element signature="e#13147#13638#0" expanded="false" />
+                <element signature="e#16922#17651#0" expanded="false" />
+                <element signature="e#17687#18368#0" expanded="false" />
+                <element signature="e#23360#24340#0" expanded="false" />
+                <element signature="e#24370#25359#0" expanded="false" />
+                <element signature="e#25519#30260#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_forest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/ensemble/_forest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1375">
+              <caret line="1152" column="8" lean-forward="false" selection-start-line="1152" selection-start-column="8" selection-end-line="1152" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Boosting_Bagging_experiment.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Boosting_Bagging_experiment.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_bagging.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/ensemble/_bagging.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7021">
+              <caret line="431" column="6" lean-forward="false" selection-start-line="431" selection-start-column="6" selection-end-line="431" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="insurance_claims.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/insurance_claims.csv">
+          <provider editor-type-id="csv-text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="71" lean-forward="false" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
           <provider selected="true" editor-type-id="csv-table-editor">
             <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
               <column index="0" width="100" />
@@ -98,29 +137,13 @@
               <column index="38" width="100" />
             </state>
           </provider>
-          <provider editor-type-id="csv-text-editor">
-            <state relative-caret-position="17">
-              <caret line="21" column="71" lean-forward="false" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
         </entry>
       </file>
       <file leaf-file-name="experiment.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/experiment.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1536">
-              <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_multilayer_perceptron.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/neural_network/_multilayer_perceptron.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="939" column="8" lean-forward="false" selection-start-line="939" selection-start-column="8" selection-end-line="939" selection-end-column="8" />
+            <state relative-caret-position="-1173">
+              <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -149,6 +172,7 @@
       <list>
         <option value="$PROJECT_DIR$/insurance_claims.csv" />
         <option value="$PROJECT_DIR$/x.csv" />
+        <option value="$PROJECT_DIR$/Boosting_Bagging_experiment.txt" />
         <option value="$PROJECT_DIR$/experiment.txt" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
@@ -182,6 +206,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,8 +250,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -450,17 +474,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29157782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2979744" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48212352" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48212352" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3445287" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -505,320 +528,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/neighbors/_classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/insurance_claims.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
-          <column index="0" width="100" />
-          <column index="1" width="100" />
-          <column index="2" width="100" />
-          <column index="3" width="100" />
-          <column index="4" width="100" />
-          <column index="5" width="100" />
-          <column index="6" width="100" />
-          <column index="7" width="100" />
-          <column index="8" width="100" />
-          <column index="9" width="100" />
-          <column index="10" width="100" />
-          <column index="11" width="100" />
-          <column index="12" width="100" />
-          <column index="13" width="100" />
-          <column index="14" width="100" />
-          <column index="15" width="100" />
-          <column index="16" width="100" />
-          <column index="17" width="100" />
-          <column index="18" width="100" />
-          <column index="19" width="100" />
-          <column index="20" width="100" />
-          <column index="21" width="100" />
-          <column index="22" width="100" />
-          <column index="23" width="100" />
-          <column index="24" width="100" />
-          <column index="25" width="100" />
-          <column index="26" width="100" />
-          <column index="27" width="100" />
-          <column index="28" width="100" />
-          <column index="29" width="100" />
-          <column index="30" width="100" />
-          <column index="31" width="100" />
-          <column index="32" width="100" />
-          <column index="33" width="100" />
-          <column index="34" width="100" />
-          <column index="35" width="100" />
-          <column index="36" width="100" />
-          <column index="37" width="100" />
-          <column index="38" width="100" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#953#2752#0" expanded="false" />
-            <element signature="e#2791#6811#0" expanded="false" />
-            <element signature="e#6863#7905#0" expanded="false" />
-            <element signature="e#7979#8550#0" expanded="false" />
-            <element signature="e#8587#8833#0" expanded="false" />
-            <element signature="e#8879#9647#0" expanded="false" />
-            <element signature="e#9693#10245#0" expanded="false" />
-            <element signature="e#10286#10718#0" expanded="false" />
-            <element signature="e#10765#11013#0" expanded="false" />
-            <element signature="e#11071#11700#0" expanded="false" />
-            <element signature="e#11750#12154#0" expanded="false" />
-            <element signature="e#12193#12819#0" expanded="false" />
-            <element signature="e#13040#13531#0" expanded="false" />
-            <element signature="e#13749#14310#0" expanded="false" />
-            <element signature="e#15211#16000#0" expanded="false" />
-            <element signature="e#16031#16707#0" expanded="false" />
-            <element signature="e#16736#17446#0" expanded="false" />
-            <element signature="e#17482#18150#0" expanded="false" />
-            <element signature="e#18189#18927#0" expanded="false" />
-            <element signature="e#18966#19749#0" expanded="false" />
-            <element signature="e#19778#20582#0" expanded="false" />
-            <element signature="e#20743#23300#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/insurance_claims.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
-          <column index="0" width="100" />
-          <column index="1" width="100" />
-          <column index="2" width="100" />
-          <column index="3" width="100" />
-          <column index="4" width="100" />
-          <column index="5" width="100" />
-          <column index="6" width="100" />
-          <column index="7" width="100" />
-          <column index="8" width="100" />
-          <column index="9" width="100" />
-          <column index="10" width="100" />
-          <column index="11" width="100" />
-          <column index="12" width="100" />
-          <column index="13" width="100" />
-          <column index="14" width="100" />
-          <column index="15" width="100" />
-          <column index="16" width="100" />
-          <column index="17" width="100" />
-          <column index="18" width="100" />
-          <column index="19" width="100" />
-          <column index="20" width="100" />
-          <column index="21" width="100" />
-          <column index="22" width="100" />
-          <column index="23" width="100" />
-          <column index="24" width="100" />
-          <column index="25" width="100" />
-          <column index="26" width="100" />
-          <column index="27" width="100" />
-          <column index="28" width="100" />
-          <column index="29" width="100" />
-          <column index="30" width="100" />
-          <column index="31" width="100" />
-          <column index="32" width="100" />
-          <column index="33" width="100" />
-          <column index="34" width="100" />
-          <column index="35" width="100" />
-          <column index="36" width="100" />
-          <column index="37" width="100" />
-          <column index="38" width="100" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#953#2752#0" expanded="false" />
-            <element signature="e#2791#6811#0" expanded="false" />
-            <element signature="e#6863#7905#0" expanded="false" />
-            <element signature="e#7979#8550#0" expanded="false" />
-            <element signature="e#8587#8833#0" expanded="false" />
-            <element signature="e#8879#9647#0" expanded="false" />
-            <element signature="e#9693#10245#0" expanded="false" />
-            <element signature="e#10286#10718#0" expanded="false" />
-            <element signature="e#10765#11013#0" expanded="false" />
-            <element signature="e#11071#11700#0" expanded="false" />
-            <element signature="e#11750#12154#0" expanded="false" />
-            <element signature="e#12193#12819#0" expanded="false" />
-            <element signature="e#13040#13531#0" expanded="false" />
-            <element signature="e#13749#14310#0" expanded="false" />
-            <element signature="e#15211#16000#0" expanded="false" />
-            <element signature="e#16031#16707#0" expanded="false" />
-            <element signature="e#16736#17446#0" expanded="false" />
-            <element signature="e#17482#18150#0" expanded="false" />
-            <element signature="e#18189#18927#0" expanded="false" />
-            <element signature="e#18966#19749#0" expanded="false" />
-            <element signature="e#19778#20582#0" expanded="false" />
-            <element signature="e#20743#23300#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#953#2752#0" expanded="false" />
-            <element signature="e#2791#6811#0" expanded="false" />
-            <element signature="e#6863#7905#0" expanded="false" />
-            <element signature="e#7979#8550#0" expanded="false" />
-            <element signature="e#8587#8833#0" expanded="false" />
-            <element signature="e#8879#9647#0" expanded="false" />
-            <element signature="e#9693#10245#0" expanded="false" />
-            <element signature="e#10286#10718#0" expanded="false" />
-            <element signature="e#10765#11013#0" expanded="false" />
-            <element signature="e#11071#11700#0" expanded="false" />
-            <element signature="e#11750#12154#0" expanded="false" />
-            <element signature="e#12193#12819#0" expanded="false" />
-            <element signature="e#13040#13531#0" expanded="false" />
-            <element signature="e#13749#14310#0" expanded="false" />
-            <element signature="e#15211#16000#0" expanded="false" />
-            <element signature="e#16031#16707#0" expanded="false" />
-            <element signature="e#16736#17446#0" expanded="false" />
-            <element signature="e#17482#18150#0" expanded="false" />
-            <element signature="e#18189#18927#0" expanded="false" />
-            <element signature="e#18966#19749#0" expanded="false" />
-            <element signature="e#19778#20582#0" expanded="false" />
-            <element signature="e#20743#23300#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/insurance_claims.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
-          <column index="0" width="100" />
-          <column index="1" width="100" />
-          <column index="2" width="100" />
-          <column index="3" width="100" />
-          <column index="4" width="100" />
-          <column index="5" width="100" />
-          <column index="6" width="100" />
-          <column index="7" width="100" />
-          <column index="8" width="100" />
-          <column index="9" width="100" />
-          <column index="10" width="100" />
-          <column index="11" width="100" />
-          <column index="12" width="100" />
-          <column index="13" width="100" />
-          <column index="14" width="100" />
-          <column index="15" width="100" />
-          <column index="16" width="100" />
-          <column index="17" width="100" />
-          <column index="18" width="100" />
-          <column index="19" width="100" />
-          <column index="20" width="100" />
-          <column index="21" width="100" />
-          <column index="22" width="100" />
-          <column index="23" width="100" />
-          <column index="24" width="100" />
-          <column index="25" width="100" />
-          <column index="26" width="100" />
-          <column index="27" width="100" />
-          <column index="28" width="100" />
-          <column index="29" width="100" />
-          <column index="30" width="100" />
-          <column index="31" width="100" />
-          <column index="32" width="100" />
-          <column index="33" width="100" />
-          <column index="34" width="100" />
-          <column index="35" width="100" />
-          <column index="36" width="100" />
-          <column index="37" width="100" />
-          <column index="38" width="100" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/pandas/core/tools/datetimes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="610" column="0" lean-forward="false" selection-start-line="610" selection-start-column="0" selection-end-line="610" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/pandas/core/frame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="440" column="8" lean-forward="false" selection-start-line="440" selection-start-column="8" selection-end-line="440" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/compose/_column_transformer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2760">
-          <caret line="176" column="8" lean-forward="false" selection-start-line="176" selection-start-column="8" selection-end-line="176" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/seaborn/axisgrid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="298" column="8" lean-forward="false" selection-start-line="298" selection-start-column="8" selection-end-line="298" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/seaborn/categorical.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -869,13 +578,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/logistic_regression.py" />
     <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/preprocessing/_label.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -885,15 +588,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/y.csv">
+      <provider editor-type-id="csv-text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
           <column index="0" width="100" />
           <column index="1" width="100" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -910,6 +613,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/x_train_corr.csv">
+      <provider editor-type-id="csv-text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
           <column index="0" width="100" />
@@ -951,11 +659,6 @@
           <column index="36" width="100" />
           <column index="37" width="100" />
           <column index="38" width="100" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -997,54 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/neighbors/_classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="68" column="46" lean-forward="false" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/linear_model/_logistic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="1095" column="15" lean-forward="false" selection-start-line="1095" selection-start-column="15" selection-end-line="1095" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/svm/_classes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3262">
-          <caret line="636" column="8" lean-forward="false" selection-start-line="636" selection-start-column="8" selection-end-line="636" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/naive_bayes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8296">
-          <caret line="183" column="8" lean-forward="false" selection-start-line="183" selection-start-column="8" selection-end-line="183" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/tree/_classes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13498">
-          <caret line="825" column="33" lean-forward="false" selection-start-line="825" selection-start-column="17" selection-end-line="825" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/ensemble/_forest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3058">
-          <caret line="1161" column="12" lean-forward="true" selection-start-line="1161" selection-start-column="12" selection-end-line="1161" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/neural_network/_multilayer_perceptron.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
@@ -1068,7 +723,53 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/metrics/_scorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="402" column="0" lean-forward="false" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/utils/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/Logistic.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/Naive Bayes.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/Neural Network MLP.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/Random Forest.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/insurance_claims.csv">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="71" lean-forward="false" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
       <provider selected="true" editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
           <column index="0" width="100" />
@@ -1112,70 +813,156 @@
           <column index="38" width="100" />
         </state>
       </provider>
-      <provider editor-type-id="csv-text-editor">
-        <state relative-caret-position="17">
-          <caret line="21" column="71" lean-forward="false" selection-start-line="21" selection-start-column="70" selection-end-line="21" selection-end-column="71" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/K-NN.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="1156" column="4" lean-forward="false" selection-start-line="1156" selection-start-column="4" selection-end-line="1156" selection-end-column="4" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/Decision Tree.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/Logistic_Liblinear.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/SVM_Poly.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/SVM_Rbf.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plots/performance/SVM.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/naive_bayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="183" column="8" lean-forward="false" selection-start-line="183" selection-start-column="8" selection-end-line="183" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/linear_model/_logistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3823">
+          <caret line="1252" column="8" lean-forward="false" selection-start-line="1252" selection-start-column="8" selection-end-line="1252" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/neighbors/_classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="45" column="62" lean-forward="false" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/tree/_classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206">
+          <caret line="820" column="8" lean-forward="false" selection-start-line="820" selection-start-column="8" selection-end-line="820" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/ensemble/_gb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4997">
+          <caret line="770" column="6" lean-forward="false" selection-start-line="770" selection-start-column="6" selection-end-line="770" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/ensemble/_bagging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7021">
+          <caret line="431" column="6" lean-forward="false" selection-start-line="431" selection-start-column="6" selection-end-line="431" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/ensemble/_weight_boosting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="460" column="0" lean-forward="false" selection-start-line="460" selection-start-column="0" selection-end-line="460" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Boosting_Bagging_experiment.txt">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/svm/_classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3160">
+          <caret line="636" column="8" lean-forward="false" selection-start-line="636" selection-start-column="8" selection-end-line="636" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/ensemble/_forest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1375">
+          <caret line="1152" column="8" lean-forward="false" selection-start-line="1152" selection-start-column="8" selection-end-line="1152" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/experiment.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1536">
-          <caret line="22" column="31" lean-forward="true" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/metrics/_scorer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="402" column="0" lean-forward="false" selection-start-line="402" selection-start-column="0" selection-end-line="402" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project_env/Lib/site-packages/sklearn/utils/validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state relative-caret-position="-1173">
+          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="769" column="63" lean-forward="true" selection-start-line="769" selection-start-column="63" selection-end-line="769" selection-end-column="63" />
+        <state relative-caret-position="1107">
+          <caret line="642" column="0" lean-forward="true" selection-start-line="642" selection-start-column="0" selection-end-line="642" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#953#2752#0" expanded="false" />
-            <element signature="e#2791#6811#0" expanded="false" />
-            <element signature="e#6863#7905#0" expanded="false" />
-            <element signature="e#7979#8550#0" expanded="false" />
-            <element signature="e#8587#8833#0" expanded="false" />
-            <element signature="e#8879#9647#0" expanded="false" />
-            <element signature="e#9693#10245#0" expanded="false" />
-            <element signature="e#10286#10718#0" expanded="false" />
-            <element signature="e#10765#11013#0" expanded="false" />
-            <element signature="e#11071#11700#0" expanded="false" />
-            <element signature="e#11750#12154#0" expanded="false" />
-            <element signature="e#12193#12819#0" expanded="false" />
-            <element signature="e#13040#13531#0" expanded="false" />
-            <element signature="e#13749#14310#0" expanded="false" />
-            <element signature="e#15211#16000#0" expanded="false" />
-            <element signature="e#16031#16707#0" expanded="false" />
-            <element signature="e#16736#17446#0" expanded="false" />
-            <element signature="e#17482#18150#0" expanded="false" />
-            <element signature="e#18189#18927#0" expanded="false" />
-            <element signature="e#18966#19749#0" expanded="false" />
-            <element signature="e#19778#20582#0" expanded="false" />
-            <element signature="e#20743#23300#1" expanded="false" />
+            <element signature="e#1060#2859#0" expanded="false" />
+            <element signature="e#2898#6918#0" expanded="false" />
+            <element signature="e#6970#8012#0" expanded="false" />
+            <element signature="e#8086#8657#0" expanded="false" />
+            <element signature="e#8694#8940#0" expanded="false" />
+            <element signature="e#8986#9754#0" expanded="false" />
+            <element signature="e#9800#10352#0" expanded="false" />
+            <element signature="e#10393#10825#0" expanded="false" />
+            <element signature="e#10872#11120#0" expanded="false" />
+            <element signature="e#11178#11807#0" expanded="false" />
+            <element signature="e#11857#12261#0" expanded="false" />
+            <element signature="e#12300#12926#0" expanded="false" />
+            <element signature="e#13147#13638#0" expanded="false" />
+            <element signature="e#16922#17651#0" expanded="false" />
+            <element signature="e#17687#18368#0" expanded="false" />
+            <element signature="e#23360#24340#0" expanded="false" />
+            <element signature="e#24370#25359#0" expanded="false" />
+            <element signature="e#25519#30260#0" expanded="false" />
           </folding>
         </state>
       </provider>

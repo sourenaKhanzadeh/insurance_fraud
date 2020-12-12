@@ -15,6 +15,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import learning_curve
 from sklearn.model_selection import ShuffleSplit
+from sklearn.ensemble import AdaBoostClassifier, BaggingClassifier
+from mpl_toolkits.mplot3d import Axes3D
 
 from abc import ABC, abstractmethod
 
@@ -368,6 +370,7 @@ class Classifier(ABC):
 
 class Logistic(Classifier):
     classifier_name = "Logistic"
+    par ="_Sag_penalty_none"
 
 
     def __init__(self, csv="insurance_claims.csv", all_data=False):
@@ -377,7 +380,7 @@ class Logistic(Classifier):
     def fit(self):
         super().fit()
 
-        clf = LogisticRegression(random_state=0)
+        clf = LogisticRegression(random_state=0, solver="newton-cg", penalty='none')
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -406,11 +409,12 @@ class Logistic(Classifier):
 class SVC_(Classifier):
 
     classifier_name = "SVM"
+    par = "Poly"
 
     def fit(self):
         super().fit()
 
-        clf = SVC(kernel='sigmoid', random_state=0)
+        clf = SVC(kernel='poly', random_state=0)
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -438,11 +442,12 @@ class SVC_(Classifier):
 
 class KNN(Classifier):
     classifier_name = "K-NN"
+    par = "15_euc"
 
     def fit(self):
         super().fit()
 
-        clf = KNeighborsClassifier(n_neighbors=15, metric="minkowski", p=1)
+        clf = KNeighborsClassifier(n_neighbors=15, metric="minkowski", p=2)
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -470,6 +475,7 @@ class KNN(Classifier):
 
 class NaiveBayes(Classifier):
     classifier_name = "Naive Bayes"
+    par = ""
 
     def fit(self):
         super().fit()
@@ -503,6 +509,7 @@ class NaiveBayes(Classifier):
 
 class DecisionTree(Classifier):
     classifier_name = "Decision Tree"
+    par = ""
 
     def fit(self):
         super().fit()
@@ -533,9 +540,20 @@ class DecisionTree(Classifier):
 
         return res
 
+    def test_leaves(self):
+        super().fit()
+        leaf_cross_valid = []
+        for i in range(1, 51):
+            clf = DecisionTreeClassifier(criterion="entropy", random_state=0, min_samples_leaf=i)
+            clf.fit(self.x_train, self.y_train)
+            self._clf = clf
+            leaf_cross_valid.append(self.cross_valid())
+        return leaf_cross_valid
+
 
 class RandomForest(Classifier):
     classifier_name = "Random Forest"
+    par = ""
 
     def fit(self):
         super().fit()
@@ -566,9 +584,66 @@ class RandomForest(Classifier):
 
         return res
 
+    def forest_optim_graph(self, graph=True):
+        super().fit()
+        if not graph:
+
+            maxima = []
+            maxima_i = []
+            for k in  range(1, 26, 2):
+                x = []
+                y = []
+                z = []
+                for i in range(1, 101):
+                    for j in range(k, k+2):
+
+                        clf = RandomForestClassifier(n_estimators=i, criterion="entropy", random_state=1, min_samples_leaf=j,
+                                                     max_features=25)
+                        clf.fit(self.x_train, self.y_train)
+                        self._clf = clf
+
+                        x.append(i)
+                        y.append(j)
+                        z.append(self.cross_valid())
+                index = z.index(max(z))
+                print("({}, {}): tree_size = {}, leaf_size = {} , cross_validation = {}".format(k, k+5, x[index], y[index], z[index]))
+                maxima.append([x[index], y[index], z[index]])
+
+            index = 0
+            for i in range(len(maxima)):
+                if maxima[i][-1] > maxima[index][-1]:
+                    index = i
+
+            print("Maxima: tree_size = {}, leaf_size = {} , cross_validation = {}".format(maxima[index][0], maxima[index][1], maxima[index][-1]))
+
+        else:
+            fig = plt.figure()
+            ax = fig.add_subplot(111, projection='3d')
+
+            # modify x,y,z according to the report
+
+            x = [83, 58, 72, 54, 20, 2, 2, 16, 18, 29, 24, 38, 7]
+            y = [1, 4, 5, 7, 9, 12, 13, 15, 17, 19, 21, 23, 25]
+            z = []
+            for i, j in zip(x, y):
+                clf = RandomForestClassifier(n_estimators=i, criterion="entropy", random_state=1, min_samples_leaf=j,
+                                             max_features=25)
+                clf.fit(self.x_train, self.y_train)
+                self._clf = clf
+
+                z.append(self.cross_valid())
+
+            ax.set_xlabel("tree_size")
+            ax.set_ylabel("leaf_size")
+            ax.set_zlabel("cross_validation")
+            ax.scatter(x, y, z)
+
+            plt.show()
+
 
 class NN(Classifier):
     classifier_name = "Neural Network MLP"
+    par = ""
 
     def fit(self):
         super().fit()
@@ -601,6 +676,88 @@ class NN(Classifier):
 
         return res
 
+
+class Ada(Classifier):
+    classifier_name = "AdaBoost Classifier: "
+    par = ""
+
+    def __init__(self, base_clf, csv="insurance_claims.csv", all_data=False):
+        super().__init__(csv, all_data)
+        self.base_clf = base_clf
+
+
+        self.classifier_name += base_clf.classifier_name
+
+    def fit(self):
+        super().fit()
+
+        clf = AdaBoostClassifier(base_estimator=self.base_clf._clf)
+
+        clf.fit(self.x_train, self.y_train)
+
+        self._clf = clf
+
+    def accuracy(self):
+        return accuracy_score(self.y_test, self.predict())
+
+    def predict(self):
+        return self._clf.predict(self.x_test)
+
+    def confusion_matrix(self):
+        return confusion_matrix(self.y_test, self.predict())
+
+    def __str__(self):
+        res = super().__str__()
+        res += """
+                   Accuracy: {}
+                   {}
+                       """.format(
+            self.accuracy(),
+            classification_report(self.y_test, self.predict())
+        )
+
+        return res
+
+
+class Bag(Classifier):
+    classifier_name = "Bagging Classifier: "
+    par = ""
+
+    def __init__(self, base_clf, csv="insurance_claims.csv", all_data=False):
+        super().__init__(csv, all_data)
+        self.base_clf = base_clf
+
+        self.classifier_name += base_clf.classifier_name
+
+    def fit(self):
+        super().fit()
+
+        clf = BaggingClassifier(base_estimator=self.base_clf._clf)
+
+        clf.fit(self.x_train, self.y_train)
+
+        self._clf = clf
+
+    def accuracy(self):
+        return accuracy_score(self.y_test, self.predict())
+
+    def predict(self):
+        return self._clf.predict(self.x_test)
+
+    def confusion_matrix(self):
+        return confusion_matrix(self.y_test, self.predict())
+
+    def __str__(self):
+        res = super().__str__()
+        res += """
+                       Accuracy: {}
+                       {}
+                           """.format(
+            self.accuracy(),
+            classification_report(self.y_test, self.predict())
+        )
+
+        return res
 
 def plot_learning_curve(estimator, title, X, y, axes=None, ylim=None, cv=None,
                         n_jobs=None, train_sizes=np.linspace(.1, 1.0, 5)):
@@ -663,13 +820,13 @@ def plot_learning_curve(estimator, title, X, y, axes=None, ylim=None, cv=None,
         (default: np.linspace(0.1, 1.0, 5))
     """
     if axes is None:
-        _, axes = plt.subplots(1, 3, figsize=(20, 5))
+        _, axes = plt.subplots(1, 1, figsize=(10, 10))
 
-    axes[0].set_title(title)
+    axes.set_title(title)
     if ylim is not None:
-        axes[0].set_ylim(*ylim)
-    axes[0].set_xlabel("Training examples")
-    axes[0].set_ylabel("Score")
+        axes.set_ylim(*ylim)
+    axes.set_xlabel("Training examples")
+    axes.set_ylabel("Score")
 
     train_sizes, train_scores, test_scores, fit_times, _ = \
         learning_curve(estimator, X, y, cv=cv, n_jobs=n_jobs,
@@ -683,36 +840,38 @@ def plot_learning_curve(estimator, title, X, y, axes=None, ylim=None, cv=None,
     fit_times_std = np.std(fit_times, axis=1)
 
     # Plot learning curve
-    axes[0].grid()
-    axes[0].fill_between(train_sizes, train_scores_mean - train_scores_std,
+    axes.grid()
+    axes.fill_between(train_sizes, train_scores_mean - train_scores_std,
                          train_scores_mean + train_scores_std, alpha=0.1,
                          color="r")
-    axes[0].fill_between(train_sizes, test_scores_mean - test_scores_std,
+    axes.fill_between(train_sizes, test_scores_mean - test_scores_std,
                          test_scores_mean + test_scores_std, alpha=0.1,
                          color="g")
-    axes[0].plot(train_sizes, train_scores_mean, 'o-', color="r",
+    axes.plot(train_sizes, train_scores_mean, 'o-', color="r",
                  label="Training score")
-    axes[0].plot(train_sizes, test_scores_mean, 'o-', color="g",
+    axes.plot(train_sizes, test_scores_mean, 'o-', color="g",
                  label="Cross-validation score")
-    axes[0].legend(loc="best")
+    axes.legend(loc="best")
+
+
 
     # Plot n_samples vs fit_times
-    axes[1].grid()
-    axes[1].plot(train_sizes, fit_times_mean, 'o-')
-    axes[1].fill_between(train_sizes, fit_times_mean - fit_times_std,
-                         fit_times_mean + fit_times_std, alpha=0.1)
-    axes[1].set_xlabel("Training examples")
-    axes[1].set_ylabel("fit_times")
-    axes[1].set_title("Scalability of the model")
+    # axes[1].grid()
+    # axes[1].plot(train_sizes, fit_times_mean, 'o-')
+    # axes[1].fill_between(train_sizes, fit_times_mean - fit_times_std,
+    #                      fit_times_mean + fit_times_std, alpha=0.1)
+    # axes[1].set_xlabel("Training examples")
+    # axes[1].set_ylabel("fit_times")
+    # axes[1].set_title("Scalability of the model")
 
     # Plot fit_time vs score
-    axes[2].grid()
-    axes[2].plot(fit_times_mean, test_scores_mean, 'o-')
-    axes[2].fill_between(fit_times_mean, test_scores_mean - test_scores_std,
-                         test_scores_mean + test_scores_std, alpha=0.1)
-    axes[2].set_xlabel("fit_times")
-    axes[2].set_ylabel("Score")
-    axes[2].set_title("Performance of the model")
+    # axes[2].grid()
+    # axes[2].plot(fit_times_mean, test_scores_mean, 'o-')
+    # axes[2].fill_between(fit_times_mean, test_scores_mean - test_scores_std,
+    #                      test_scores_mean + test_scores_std, alpha=0.1)
+    # axes[2].set_xlabel("fit_times")
+    # axes[2].set_ylabel("Score")
+    # axes[2].set_title("Performance of the model")
 
     return plt
 
@@ -754,20 +913,87 @@ if __name__ == "__main__":
             RandomForest(all_data=all_data[4]),
             NN(all_data=all_data[5])]
 
-    with open("experiment.txt", 'w+') as file:
-        for clf in clfs:
-            clf.fit()
+    experiment = False
+    if experiment:
+        with open("experiment.txt", 'w+') as file:
+        # file = open("experiment.txt", 'w+')
+            for clf in clfs:
+                clf.fit()
 
-            file.write(str(clf))
-            file.write("Cross Validation Score(5 fold 20%): {}".format(clf.cross_valid()))
+                file.write(str(clf))
+                file.write("Cross Validation Score(5 fold 20%): {}".format(clf.cross_valid()))
 
-    fig, axes = plt.subplots(3, 2, figsize=(10, 15))
+    # file.close()
+
+    # fig, axes = plt.subplots(3, 2, figsize=(10, 15))
     # score curves, each time with 20% data randomly selected as a validation set.
-    cv = ShuffleSplit(n_splits=100, test_size=0.2, random_state=0)
+    # cv = ShuffleSplit(n_splits=100, test_size=0.2, random_state=0)
 
     performance = False
 
     if performance:
         for clf in clfs:
-            plt = plot_learning_curve(clf._clf, "Learning Curves " + clf.classifier_name, pd.DataFrame(clf.X).fillna(0).to_numpy(), pd.DataFrame(clf.y).fillna(0).to_numpy())
-            plt.savefig("plots/performance/" + clf.classifier_name)
+            if clf.classifier_name == "SVM":
+                plt = plot_learning_curve(clf._clf, "Learning Curves " + clf.classifier_name, pd.DataFrame(clf.X).fillna(0).to_numpy(), pd.DataFrame(clf.y).fillna(0).to_numpy())
+                plt.savefig("plots/performance/" + clf.classifier_name+ clf.par)
+
+
+    boost_bagg = False
+
+    if boost_bagg:
+        with open("Boosting_Bagging_experiment.txt", "w+") as file:
+            for clf in clfs:
+                if clf.classifier_name != "SVM" and clf.classifier_name != "K-NN" and clf.classifier_name != "Neural Network MLP":
+                    boost = Ada(clf)
+                    bag = Bag(clf)
+
+                    # boost_bag = Bag(Ada(clf))
+
+                    boost.fit()
+                    bag.fit()
+                    # boost_bag.fit()
+
+                    file.write(str(boost))
+                    file.write("Cross Validation Score(5 fold 20%): {}".format(boost.cross_valid()))
+
+                    plt = plot_learning_curve(boost._clf, "Learning Curves Boost " + boost.base_clf.classifier_name,
+                                              pd.DataFrame(boost.X).fillna(0).to_numpy(),
+                                              pd.DataFrame(boost.y).fillna(0).to_numpy())
+                    plt.savefig("plots/performance/boost_" + boost.base_clf.classifier_name + boost.base_clf.par)
+
+                    file.write(str(bag))
+                    file.write("Cross Validation Score(5 fold 20%): {}".format(bag.cross_valid()))
+
+
+                    plt = plot_learning_curve(bag._clf, "Learning Curves Bag " + bag.base_clf.classifier_name,
+                                              pd.DataFrame(bag.X).fillna(0).to_numpy(),
+                                              pd.DataFrame(bag.y).fillna(0).to_numpy())
+                    plt.savefig("plots/performance/bag_" + bag.base_clf.classifier_name + bag.base_clf.par)
+
+                    # file.write(str(boost_bag))
+                    # file.write("Cross Validation Score(5 fold 20%): {}".format(boost_bag.cross_valid()))
+                    #
+                    #
+                    # plt = plot_learning_curve(boost_bag._clf, "Learning Curves  Boost_Bag " + boost_bag.base_clf.base_clf.classifier_name,
+                    #                           pd.DataFrame(boost_bag.X).fillna(0).to_numpy(),
+                    #                           pd.DataFrame(boost_bag.y).fillna(0).to_numpy())
+                    # plt.savefig("plots/performance/boost_bag_" + boost_bag.base_clf.base_clf.classifier_name + boost_bag.base_clf.base_clf.par)
+
+
+    test_leaves = False
+    if test_leaves:
+        leaves = [i for i in range(1, 51)]
+        clf = DecisionTree(all_data=all_data[3])
+        test = clf.test_leaves()
+        plt.plot([i for i in range(len(test))], test)
+        plt.xlabel("Leaf Size")
+        plt.ylabel("cross_validation")
+        plt.title("optimal leaf size")
+        plt.savefig("plots/Decision_tree_leaf_size")
+
+
+    optimal_random = True
+
+    if optimal_random:
+        clf = RandomForest(all_data=all_data[4])
+        clf.forest_optim_graph()
