@@ -21,41 +21,22 @@ weighted avg       0.70      0.70      0.70        92
     ===========================
     Bagging Classifier: Logistic Classifier
     ===========================
-    Confusion Matrix: [[25 23]
+    Confusion Matrix: [[26 22]
  [22 22]]
-    Training Accuracy: 0.654891304347826
-    Testing Accuracy: 0.5108695652173914
+    Training Accuracy: 0.6766304347826086
+    Testing Accuracy: 0.5217391304347826
         
-                       Accuracy: 0.5108695652173914
+                       Accuracy: 0.5217391304347826
                                      precision    recall  f1-score   support
 
-           0       0.53      0.52      0.53        48
-           1       0.49      0.50      0.49        44
+           0       0.54      0.54      0.54        48
+           1       0.50      0.50      0.50        44
 
-    accuracy                           0.51        92
-   macro avg       0.51      0.51      0.51        92
-weighted avg       0.51      0.51      0.51        92
+    accuracy                           0.52        92
+   macro avg       0.52      0.52      0.52        92
+weighted avg       0.52      0.52      0.52        92
 
-                           Cross Validation Score(5 fold 20%): 0.5717391304347825
-    ===========================
-    Bagging Classifier: AdaBoost Classifier: Logistic Classifier
-    ===========================
-    Confusion Matrix: [[42  6]
- [ 5 39]]
-    Training Accuracy: 0.9809782608695652
-    Testing Accuracy: 0.8804347826086957
-        
-                       Accuracy: 0.8804347826086957
-                                     precision    recall  f1-score   support
-
-           0       0.89      0.88      0.88        48
-           1       0.87      0.89      0.88        44
-
-    accuracy                           0.88        92
-   macro avg       0.88      0.88      0.88        92
-weighted avg       0.88      0.88      0.88        92
-
-                           Cross Validation Score(5 fold 20%): 0.8021739130434782
+                           Cross Validation Score(5 fold 20%): 0.6282608695652174
     ===========================
     AdaBoost Classifier: Naive Bayes Classifier
     ===========================
@@ -80,7 +61,7 @@ weighted avg       0.38      0.41      0.38        92
     ===========================
     Confusion Matrix: [[19 29]
  [ 9 35]]
-    Training Accuracy: 0.6222826086956522
+    Training Accuracy: 0.6114130434782609
     Testing Accuracy: 0.5869565217391305
         
                        Accuracy: 0.5869565217391305
@@ -95,87 +76,49 @@ weighted avg       0.62      0.59      0.57        92
 
                            Cross Validation Score(5 fold 20%): 0.5978260869565217
     ===========================
-    Bagging Classifier: AdaBoost Classifier: Naive Bayes Classifier
-    ===========================
-    Confusion Matrix: [[43  5]
- [ 7 37]]
-    Training Accuracy: 0.9809782608695652
-    Testing Accuracy: 0.8695652173913043
-        
-                       Accuracy: 0.8695652173913043
-                                     precision    recall  f1-score   support
-
-           0       0.86      0.90      0.88        48
-           1       0.88      0.84      0.86        44
-
-    accuracy                           0.87        92
-   macro avg       0.87      0.87      0.87        92
-weighted avg       0.87      0.87      0.87        92
-
-                           Cross Validation Score(5 fold 20%): 0.8282608695652174
-    ===========================
     AdaBoost Classifier: Decision Tree Classifier
     ===========================
-    Confusion Matrix: [[35 13]
- [ 9 35]]
+    Confusion Matrix: [[38 10]
+ [ 8 36]]
     Training Accuracy: 1.0
-    Testing Accuracy: 0.7608695652173914
+    Testing Accuracy: 0.8043478260869565
         
-                   Accuracy: 0.7608695652173914
+                   Accuracy: 0.8043478260869565
                                  precision    recall  f1-score   support
 
-           0       0.80      0.73      0.76        48
-           1       0.73      0.80      0.76        44
+           0       0.83      0.79      0.81        48
+           1       0.78      0.82      0.80        44
 
-    accuracy                           0.76        92
-   macro avg       0.76      0.76      0.76        92
-weighted avg       0.76      0.76      0.76        92
+    accuracy                           0.80        92
+   macro avg       0.80      0.80      0.80        92
+weighted avg       0.81      0.80      0.80        92
 
-                       Cross Validation Score(5 fold 20%): 0.7304347826086957
+                       Cross Validation Score(5 fold 20%): 0.7391304347826088
     ===========================
     Bagging Classifier: Decision Tree Classifier
     ===========================
     Confusion Matrix: [[41  7]
- [ 4 40]]
-    Training Accuracy: 0.8559782608695652
-    Testing Accuracy: 0.8804347826086957
+ [ 8 36]]
+    Training Accuracy: 0.8396739130434783
+    Testing Accuracy: 0.8369565217391305
         
-                       Accuracy: 0.8804347826086957
+                       Accuracy: 0.8369565217391305
                                      precision    recall  f1-score   support
 
-           0       0.91      0.85      0.88        48
-           1       0.85      0.91      0.88        44
+           0       0.84      0.85      0.85        48
+           1       0.84      0.82      0.83        44
 
-    accuracy                           0.88        92
-   macro avg       0.88      0.88      0.88        92
-weighted avg       0.88      0.88      0.88        92
+    accuracy                           0.84        92
+   macro avg       0.84      0.84      0.84        92
+weighted avg       0.84      0.84      0.84        92
 
-                           Cross Validation Score(5 fold 20%): 0.7521739130434784
-    ===========================
-    Bagging Classifier: AdaBoost Classifier: Decision Tree Classifier
-    ===========================
-    Confusion Matrix: [[41  7]
- [ 9 35]]
-    Training Accuracy: 0.9782608695652174
-    Testing Accuracy: 0.8260869565217391
-        
-                       Accuracy: 0.8260869565217391
-                                     precision    recall  f1-score   support
-
-           0       0.82      0.85      0.84        48
-           1       0.83      0.80      0.81        44
-
-    accuracy                           0.83        92
-   macro avg       0.83      0.82      0.83        92
-weighted avg       0.83      0.83      0.83        92
-
-                           Cross Validation Score(5 fold 20%): 0.8195652173913043
+                           Cross Validation Score(5 fold 20%): 0.7673913043478261
     ===========================
     AdaBoost Classifier: Random Forest Classifier
     ===========================
     Confusion Matrix: [[41  7]
  [ 5 39]]
-    Training Accuracy: 0.9918478260869565
+    Training Accuracy: 1.0
     Testing Accuracy: 0.8695652173913043
         
                    Accuracy: 0.8695652173913043
@@ -192,38 +135,19 @@ weighted avg       0.87      0.87      0.87        92
     ===========================
     Bagging Classifier: Random Forest Classifier
     ===========================
-    Confusion Matrix: [[40  8]
- [ 8 36]]
-    Training Accuracy: 0.8777173913043478
+    Confusion Matrix: [[41  7]
+ [ 9 35]]
+    Training Accuracy: 0.8967391304347826
     Testing Accuracy: 0.8260869565217391
         
                        Accuracy: 0.8260869565217391
                                      precision    recall  f1-score   support
 
-           0       0.83      0.83      0.83        48
-           1       0.82      0.82      0.82        44
+           0       0.82      0.85      0.84        48
+           1       0.83      0.80      0.81        44
 
     accuracy                           0.83        92
-   macro avg       0.83      0.83      0.83        92
+   macro avg       0.83      0.82      0.83        92
 weighted avg       0.83      0.83      0.83        92
 
-                           Cross Validation Score(5 fold 20%): 0.7847826086956522
-    ===========================
-    Bagging Classifier: AdaBoost Classifier: Random Forest Classifier
-    ===========================
-    Confusion Matrix: [[40  8]
- [ 9 35]]
-    Training Accuracy: 0.9864130434782609
-    Testing Accuracy: 0.8152173913043478
-        
-                       Accuracy: 0.8152173913043478
-                                     precision    recall  f1-score   support
-
-           0       0.82      0.83      0.82        48
-           1       0.81      0.80      0.80        44
-
-    accuracy                           0.82        92
-   macro avg       0.82      0.81      0.81        92
-weighted avg       0.82      0.82      0.82        92
-
-                           Cross Validation Score(5 fold 20%): 0.8282608695652174
+                           Cross Validation Score(5 fold 20%): 0.7978260869565217

@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix, classification_report, accuracy_sc
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
+from sklearn.naive_bayes import GaussianNB, MultinomialNB, CategoricalNB, ComplementNB, BernoulliNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neural_network import MLPClassifier
@@ -442,12 +442,12 @@ class SVC_(Classifier):
 
 class KNN(Classifier):
     classifier_name = "K-NN"
-    par = "15_euc"
+    par = "33_Man"
 
     def fit(self):
         super().fit()
 
-        clf = KNeighborsClassifier(n_neighbors=15, metric="minkowski", p=2)
+        clf = KNeighborsClassifier(n_neighbors=33, metric="minkowski", p=2)
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -473,6 +473,32 @@ class KNN(Classifier):
 
         return res
 
+    def test_neigboursize_manhattan(self):
+        super().fit()
+        x = []
+        y = []
+        for i in range(1, 50):
+            x.append(i)
+
+            clf = KNeighborsClassifier(n_neighbors=i, metric="minkowski", p=2)
+            clf.fit(self.x_train, self.y_train)
+
+            self._clf = clf
+
+            y.append(self.cross_valid())
+
+        plt.title("Num_Neighbours")
+        plt.xlabel("num neighbours")
+        plt.ylabel("cross_validation")
+
+        plt.plot(x, y, color='red')
+
+        index = y.index(max(y))
+
+        print("n_neigbors={}, cross_valid={}".format(x[index], y[index]))
+
+        plt.savefig("plots/Num_neighbours_K_NN.png")
+
 class NaiveBayes(Classifier):
     classifier_name = "Naive Bayes"
     par = ""
@@ -480,7 +506,7 @@ class NaiveBayes(Classifier):
     def fit(self):
         super().fit()
 
-        clf = GaussianNB()
+        clf = BernoulliNB()
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -553,12 +579,12 @@ class DecisionTree(Classifier):
 
 class RandomForest(Classifier):
     classifier_name = "Random Forest"
-    par = ""
+    par = "_Tree__83_leaf_size__1"
 
     def fit(self):
         super().fit()
 
-        clf = RandomForestClassifier(n_estimators=100,criterion="entropy", random_state=1, min_samples_leaf=5, max_features=25)
+        clf = RandomForestClassifier(n_estimators=83,criterion="entropy", random_state=1, min_samples_leaf=1, max_features=25)
         clf.fit(self.x_train, self.y_train)
 
         self._clf = clf
@@ -913,7 +939,7 @@ if __name__ == "__main__":
             RandomForest(all_data=all_data[4]),
             NN(all_data=all_data[5])]
 
-    experiment = False
+    experiment = True
     if experiment:
         with open("experiment.txt", 'w+') as file:
         # file = open("experiment.txt", 'w+')
@@ -929,11 +955,13 @@ if __name__ == "__main__":
     # score curves, each time with 20% data randomly selected as a validation set.
     # cv = ShuffleSplit(n_splits=100, test_size=0.2, random_state=0)
 
-    performance = False
+    performance = True
 
     if performance:
         for clf in clfs:
-            if clf.classifier_name == "SVM":
+            if not experiment:
+                clf.fit()
+            if clf.classifier_name == "Naive Bayes":
                 plt = plot_learning_curve(clf._clf, "Learning Curves " + clf.classifier_name, pd.DataFrame(clf.X).fillna(0).to_numpy(), pd.DataFrame(clf.y).fillna(0).to_numpy())
                 plt.savefig("plots/performance/" + clf.classifier_name+ clf.par)
 
@@ -992,8 +1020,15 @@ if __name__ == "__main__":
         plt.savefig("plots/Decision_tree_leaf_size")
 
 
-    optimal_random = True
+    optimal_random = False
 
     if optimal_random:
         clf = RandomForest(all_data=all_data[4])
         clf.forest_optim_graph()
+
+    k_nn_test = False
+
+    if k_nn_test:
+        clf = KNN(all_data=all_data[1])
+
+        clf.test_neigboursize_manhattan()

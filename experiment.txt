@@ -40,41 +40,41 @@ weighted avg       0.45      0.47      0.35        92
     ===========================
     K-NN Classifier
     ===========================
-    Confusion Matrix: [[25 23]
- [18 26]]
-    Training Accuracy: 0.6222826086956522
-    Testing Accuracy: 0.5543478260869565
-        
-       Accuracy: 0.5543478260869565
-                     precision    recall  f1-score   support
-
-           0       0.58      0.52      0.55        48
-           1       0.53      0.59      0.56        44
-
-    accuracy                           0.55        92
-   macro avg       0.56      0.56      0.55        92
-weighted avg       0.56      0.55      0.55        92
-
-           Cross Validation Score(5 fold 20%): 0.5065217391304347
-    ===========================
-    Naive Bayes Classifier
-    ===========================
-    Confusion Matrix: [[19 29]
- [ 9 35]]
-    Training Accuracy: 0.6195652173913043
+    Confusion Matrix: [[23 25]
+ [13 31]]
+    Training Accuracy: 0.5978260869565217
     Testing Accuracy: 0.5869565217391305
         
        Accuracy: 0.5869565217391305
                      precision    recall  f1-score   support
 
-           0       0.68      0.40      0.50        48
-           1       0.55      0.80      0.65        44
+           0       0.64      0.48      0.55        48
+           1       0.55      0.70      0.62        44
 
     accuracy                           0.59        92
-   macro avg       0.61      0.60      0.57        92
-weighted avg       0.62      0.59      0.57        92
+   macro avg       0.60      0.59      0.58        92
+weighted avg       0.60      0.59      0.58        92
 
-           Cross Validation Score(5 fold 20%): 0.6
+           Cross Validation Score(5 fold 20%): 0.5413043478260869
+    ===========================
+    Naive Bayes Classifier
+    ===========================
+    Confusion Matrix: [[22 26]
+ [14 30]]
+    Training Accuracy: 0.6277173913043478
+    Testing Accuracy: 0.5652173913043478
+        
+       Accuracy: 0.5652173913043478
+                     precision    recall  f1-score   support
+
+           0       0.61      0.46      0.52        48
+           1       0.54      0.68      0.60        44
+
+    accuracy                           0.57        92
+   macro avg       0.57      0.57      0.56        92
+weighted avg       0.58      0.57      0.56        92
+
+           Cross Validation Score(5 fold 20%): 0.5869565217391305
     ===========================
     Decision Tree Classifier
     ===========================
@@ -99,7 +99,7 @@ weighted avg       0.86      0.86      0.86        92
     ===========================
     Confusion Matrix: [[41  7]
  [ 4 40]]
-    Training Accuracy: 0.9429347826086957
+    Training Accuracy: 1.0
     Testing Accuracy: 0.8804347826086957
         
            Accuracy: 0.8804347826086957
@@ -112,7 +112,7 @@ weighted avg       0.86      0.86      0.86        92
    macro avg       0.88      0.88      0.88        92
 weighted avg       0.88      0.88      0.88        92
 
-               Cross Validation Score(5 fold 20%): 0.8369565217391305
+               Cross Validation Score(5 fold 20%): 0.8413043478260869
     ===========================
     Neural Network MLP Classifier
     ===========================
