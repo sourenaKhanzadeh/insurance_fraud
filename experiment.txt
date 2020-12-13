@@ -57,25 +57,6 @@ weighted avg       0.60      0.59      0.58        92
 
            Cross Validation Score(5 fold 20%): 0.5413043478260869
     ===========================
-    Naive Bayes Classifier
-    ===========================
-    Confusion Matrix: [[22 26]
- [14 30]]
-    Training Accuracy: 0.6277173913043478
-    Testing Accuracy: 0.5652173913043478
-        
-       Accuracy: 0.5652173913043478
-                     precision    recall  f1-score   support
-
-           0       0.61      0.46      0.52        48
-           1       0.54      0.68      0.60        44
-
-    accuracy                           0.57        92
-   macro avg       0.57      0.57      0.56        92
-weighted avg       0.58      0.57      0.56        92
-
-           Cross Validation Score(5 fold 20%): 0.5869565217391305
-    ===========================
     Decision Tree Classifier
     ===========================
     Confusion Matrix: [[42  6]

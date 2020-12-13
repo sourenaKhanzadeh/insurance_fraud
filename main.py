@@ -499,39 +499,6 @@ class KNN(Classifier):
 
         plt.savefig("plots/Num_neighbours_K_NN.png")
 
-class NaiveBayes(Classifier):
-    classifier_name = "Naive Bayes"
-    par = ""
-
-    def fit(self):
-        super().fit()
-
-        clf = BernoulliNB()
-        clf.fit(self.x_train, self.y_train)
-
-        self._clf = clf
-
-    def accuracy(self):
-        return accuracy_score(self.y_test, self.predict())
-
-    def predict(self):
-        return self._clf.predict(self.x_test)
-
-    def confusion_matrix(self):
-        return confusion_matrix(self.y_test, self.predict())
-
-    def __str__(self):
-        res = super().__str__()
-        res += """
-       Accuracy: {}
-       {}
-           """.format(
-            self.accuracy(),
-            classification_report(self.y_test, self.predict())
-        )
-
-        return res
-
 
 class DecisionTree(Classifier):
     classifier_name = "Decision Tree"
@@ -934,10 +901,9 @@ if __name__ == "__main__":
     clfs = [lg,
             SVC_(all_data=all_data[0]),
             KNN(all_data=all_data[1]),
-            NaiveBayes(all_data=all_data[2]),
-            DecisionTree(all_data=all_data[3]),
-            RandomForest(all_data=all_data[4]),
-            NN(all_data=all_data[5])]
+            DecisionTree(all_data=all_data[2]),
+            RandomForest(all_data=all_data[3]),
+            NN(all_data=all_data[4])]
 
     experiment = True
     if experiment:
@@ -955,7 +921,7 @@ if __name__ == "__main__":
     # score curves, each time with 20% data randomly selected as a validation set.
     # cv = ShuffleSplit(n_splits=100, test_size=0.2, random_state=0)
 
-    performance = True
+    performance = False
 
     if performance:
         for clf in clfs:
@@ -966,7 +932,7 @@ if __name__ == "__main__":
                 plt.savefig("plots/performance/" + clf.classifier_name+ clf.par)
 
 
-    boost_bagg = False
+    boost_bagg = True
 
     if boost_bagg:
         with open("Boosting_Bagging_experiment.txt", "w+") as file:
