@@ -1,5 +1,5 @@
 # insurance_fraud
-[![Downloads](https://img.shields.io/wordpress/plugin/dt/dirtysuds-embed-pdf.svg)](./MLReport.pdf)
+[![Report](https://img.shields.io/wordpress/plugin/dt/dirtysuds-embed-pdf.svg)](./MLReport.pdf)
 
 ## Installing packages
 `
