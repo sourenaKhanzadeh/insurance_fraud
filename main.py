@@ -935,7 +935,7 @@ if __name__ == "__main__":
             RandomForest(all_data=all_data[3]),
             NN(all_data=all_data[4])]
 
-    experiment = True
+    experiment = False
     if experiment:
         with open("experiment.txt", 'w+') as file:
         # file = open("experiment.txt", 'w+')
