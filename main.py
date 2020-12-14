@@ -636,13 +636,13 @@ class RandomForest(Classifier):
 
 class NN(Classifier):
     classifier_name = "Neural Network MLP"
-    par = ""
+    par = "NN_92_92_tanh_adam"
 
     def fit(self):
         super().fit()
 
         clf = MLPClassifier(activation="tanh",solver='adam',
-                     hidden_layer_sizes=(40, 20, 20), random_state=1)
+                     hidden_layer_sizes=(92, 92), random_state=1)
 
         clf.fit(self.x_train, self.y_train)
 
@@ -669,6 +669,36 @@ class NN(Classifier):
 
         return res
 
+    def test_hidden_layers(self):
+        super().fit()
+
+        x = []
+        y = []
+        z = []
+        h = []
+        for active in ['identity', 'logistic', 'tanh', 'relu']:
+            for solver in ['adam', 'sgd', 'lbfgs']:
+                for i in range(37, 100):
+                    clf = MLPClassifier(activation=active, solver=solver,
+                                        hidden_layer_sizes=(i, i), random_state=1)
+
+                    clf.fit(self.x_train, self.y_train)
+
+                    self._clf = clf
+
+                    x.append(i)
+                    y.append(self.cross_valid())
+                    z.append(active)
+                    h.append(solver)
+
+        d = pd.DataFrame(zip(x, y, z, h), columns=['num_hidden_layers', 'cross_valid', 'activation', 'solver'])
+        g = sns.FacetGrid(d, col="activation",height=20, hue='solver')
+        g.map(sns.pointplot, "num_hidden_layers", "cross_valid")
+        # sns.kdeplot(data=self.dataset, x="witnesses", y="number_of_vehicles_involved", hue="police_report_available")
+        g.add_legend()
+        plt.savefig("plots/optimal_NN.png")
+        plt.clf()
+        plt.close()
 
 class Ada(Classifier):
     classifier_name = "AdaBoost Classifier: "
@@ -927,12 +957,12 @@ if __name__ == "__main__":
         for clf in clfs:
             if not experiment:
                 clf.fit()
-            if clf.classifier_name == "Naive Bayes":
+            if clf.classifier_name == "Neural Network MLP":
                 plt = plot_learning_curve(clf._clf, "Learning Curves " + clf.classifier_name, pd.DataFrame(clf.X).fillna(0).to_numpy(), pd.DataFrame(clf.y).fillna(0).to_numpy())
                 plt.savefig("plots/performance/" + clf.classifier_name+ clf.par)
 
 
-    boost_bagg = True
+    boost_bagg = False
 
     if boost_bagg:
         with open("Boosting_Bagging_experiment.txt", "w+") as file:
@@ -998,3 +1028,10 @@ if __name__ == "__main__":
         clf = KNN(all_data=all_data[1])
 
         clf.test_neigboursize_manhattan()
+
+    nn_test = False
+
+    if nn_test:
+        clf =  NN(all_data=all_data[4])
+
+        clf.test_hidden_layers()
