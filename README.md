@@ -11,7 +11,7 @@
   python main.py
 `
 ## Explanation
-![Explanation](video.mp4)
+![Explanation](./video.mp4)
 
 ## Report
-![Report Analysis](MLReport.pdf "Report")
+![Report Analysis](./MLReport.pdf "Report")
